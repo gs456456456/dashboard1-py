@@ -489,10 +489,10 @@ def mysch():
     scheduler.add_job(colorcountfx,args=(3,),trigger='interval', seconds=4)
     # scheduler.add_job(colorcountfx,args=(4,),trigger='interval', seconds=4)
     scheduler.add_job(timecountfx,args=(3,),trigger='interval', seconds=4)
-    scheduler.add_job(switch1_get,trigger='interval', seconds=60)
-    scheduler.add_job(switch2_get,trigger='interval', seconds=60)
-    scheduler.add_job(switch3_get,trigger='interval', seconds=60)
-    scheduler.add_job(switch4_get,trigger='interval', seconds=60)
+    scheduler.add_job(switch1_get,trigger='interval', seconds=10)
+    scheduler.add_job(switch2_get,trigger='interval', seconds=10)
+    scheduler.add_job(switch3_get,trigger='interval', seconds=10)
+    scheduler.add_job(switch4_get,trigger='interval', seconds=10)
     # scheduler.add_job(timecountfx,args=(4,),trigger='interval', seconds=4)#间隔5秒钟执行一次
 
     scheduler.start()    #这里的调度任务是独立的一个线程

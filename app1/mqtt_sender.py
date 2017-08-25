@@ -6,7 +6,7 @@
 ########################################
 
 import os,sys
-sys.path.append('../../untitled16/')
+sys.path.append('../../zigbee-dashboard/')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','untitled16.settings') #设置环境变量
 import django
 django.setup() #导入数据
@@ -212,7 +212,7 @@ class DeviceAgent(threading.Thread):
         self.cache(self.targetlist5,'co2',len(self.targetlist5))
         self.targetlist5 = []
 
-    def pres_mysql_save(self):
+    def pres_mysql_save(self, jsonObject):
         # targetlist = []
         pres = list(models.topicGet.objects.filter(nid='1',ch='1').values_list('m'))
         self.append_list(pres,self.targetlist6)
@@ -305,19 +305,28 @@ class DeviceAgent(threading.Thread):
         m = jsonObject['m']
         ts = jsonObject['ts']
         s = jsonObject['s']
-        models.topicGet.objects.create(nid=topicid,ch=topicch,m=m,ts=ts,s=s)
-        # print(jsonObject)
-        self.lightmysql_save2()
-        self.lightmysql_save3()
-        self.lightmysql_save()
-        self.temp_mysql_save()
-        self.humi_mysql_save()
-        self.sun_mysql_save()
-        self.pm_mysql_save()
-        self.pres_mysql_save()
-        self.co2_mysql_save()
-
-
+        # models.topicGet.objects.create(nid=topicid,ch=topicch,m=m,ts=ts,s=s)
+        # # print(jsonObject)
+        # self.lightmysql_save2()
+        # self.lightmysql_save3()
+        # self.lightmysql_save()
+        # 
+        # 
+        # 
+        # self.pm_mysql_save()
+        
+        # self.co2_mysql_save()
+        t = msg.topic
+        if "id1/ch1" in t:
+            self.pres_mysql_save(jsonObject)
+        elif "id2/ch1" in t:
+            self.temp_mysql_save(jsonObject)
+        elif "id2/ch2" in t:
+            self.humi_mysql_save(jsonObject)
+        elif "id2/ch3" in t:
+            self.sun_mysql_save(jsonObject)
+        else:
+            pass
 
     def random_save(self,data):
         # self.deviceswitch_create(data)
