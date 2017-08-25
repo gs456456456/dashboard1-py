@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Dashborad control</title>
+   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/button.css">
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <style>
+
+        .b{
+            animation:mymove 5s infinite linear;
+            -webkit-animation:mymove 5s infinite linear;
+        }
+
+        @keyframes mymove{
+            0%   {transform:rotate(0deg);transform-origin:50% 50%;}
+            100% {transform:rotate(-360deg);transform-origin:50% 50%;}
+        }
+        @-webkit-keyframes mymove{
+            0%   {transform:rotate(0deg);}
+            100% {transform:rotate(-360deg);}
+        }
+        #fantopleft{
+            position: absolute;
+            top:-4.75%;
+            left:42.75%;
+            z-index: 10;
+        }
+        #elecfatopright{
+            position: absolute;
+            top:1.5%;
+            left:62.3%;
+            z-index: 10;
+        }
+        #fanbottomleft{
+            position: absolute;
+            top:43.5%;
+            left:42.75%;
+            z-index: 10;
+        }
+        #elecfabottonright{
+            position: absolute;
+            top:49.75%;
+            left:62.3%;
+            z-index: 10;
+        }
+
+        #layplace{
+            position: absolute;
+            top:0;
+            left: 36%;
+            width:43%;
+            height: 60%;
+        }
+        #layborder{
+        }
+        .layborder-mco{
+            background-color: #2a63a4;
+            position: absolute;
+            width: 2%;
+            height: 100%;
+            z-index:5;
+        }
+        .layborder-mro{
+            background-color: #2a63a4;
+            position: absolute;
+            width: 98%;
+            height: 2.5%;
+            left:2%;
+            z-index:5;
+        }
+        #layborder-1{
+            top:0;
+        }
+        #layborder-2{
+            top:48.5%;
+            height: 2.5%;
+        }
+        #layborder-3{
+            top:97%
+        }
+        #layborder-4{
+            left:2%;
+            height: 99.5%;
+        }
+        #layborder-5{
+            height: 99.5%;
+            left:98%;
+        }
+
+{#        #layset{#}
+{#            background-color: grey;#}
+{#            position: absolute;#}
+{#            top:0;#}
+{#            left: 0;#}
+{#            width:100%;#}
+{#            height: 100%;#}
+{#        }#}
+{#        #lay-mco1{#}
+{#            left:5%;#}
+{#            width:16%;#}
+{#            height: 100%;#}
+{#            top:0;#}
+{#        }#}
+{#        #lay-mco1-1{#}
+{#            position: absolute;#}
+{#            top:5.5%;#}
+{#            left:8%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+        #lay-mco1-1{
+            position: absolute;
+            top:5.5%;
+            left:8%;
+            z-index: 15;
+            font-size: 245%;
+        }
+        #lay-mco1-2{
+            position: absolute;
+            top:16%;
+            left:8%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco1-3{
+            position: absolute;
+            top:26.5%;
+             left:8%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco1-4{
+            position: absolute;
+            top:37%;
+            left:8%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco1-5{#}
+{#            position: absolute;#}
+{#            top:54.5%;#}
+{#            left:8%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+        #lay-mco1-5{
+            position: absolute;
+            top:54.5%;
+            left:8%;
+            font-size: 245%;
+            z-index: 15;
+        }
+        #lay-mco1-6{
+            position: absolute;
+            top:65%;
+            left:8%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco1-7{
+            position: absolute;
+            top:75.5%;
+            left:8%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco1-8{
+            position: absolute;
+            top:86%;
+            left:8%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco2-1{
+            position: absolute;
+            top:5.5%;
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco2-2{
+            position: absolute;
+            top:16%;
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco2-2{#}
+{#            position: absolute;#}
+{#            top:16%;#}
+{#            left:23%;#}
+{#            z-index: 15;#}
+{#            font-size:245%;#}
+{#        }#}
+
+        #lay-mco2-3{
+            position: absolute;
+            top:26.5%;
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco2-4{
+            position: absolute;
+            top:37%;1
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco2-5{
+            position: absolute;
+            top:54.5%;
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco2-6{
+            position: absolute;
+            top:65%;
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco2-7{
+            position: absolute;
+            top:75.5%;
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco2-8{
+            position: absolute;
+            top:86%;
+            left:23%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco3-1{#}
+{#           position: absolute;#}
+{#            top:5.5%;#}
+{#            left:38%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+{#        #}
+        #lay-mco3-1{
+           position: absolute;
+            top:5.5%;
+            left:38%;
+            z-index: 15;
+            font-size: 245%;
+        }
+        #lay-mco3-2{
+            position: absolute;
+            top:16%;
+            left:38%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco3-3{
+            position: absolute;
+            top:26.5%;
+            left:38%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco3-4{
+            position: absolute;
+            top:37%;
+            left:38%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco3-5{#}
+{#            position: absolute;#}
+{#            top:54.5%;#}
+{#            left:38%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+        #lay-mco3-5{
+            position: absolute;
+            top:54.5%;
+            left:38%;
+            font-size:245%;
+            z-index: 15;
+        }
+        #lay-mco3-6{
+            position: absolute;
+            top:65%;
+            left:38%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            background-color: ;
+            z-index: 15;
+        }
+        #lay-mco3-7{
+            position: absolute;
+            top:75.5%;
+            left:38%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco3-8{
+            position: absolute;
+            top:86%;
+            left:38%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco4-1{#}
+{#           position: absolute;#}
+{#            top:5.5%;#}
+{#            left:53%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+        #lay-mco4-1{
+           position: absolute;
+            top:5.5%;
+            left:53%;
+            font-size: 245%;
+            z-index: 15;
+        }
+        #lay-mco4-2{
+            position: absolute;
+            top:16%;
+            left:53%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco4-3{
+            position: absolute;
+            top:26.5%;
+            left:53%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco4-4{
+            position: absolute;
+            top:37%;
+            left:53%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco4-5{#}
+{#            position: absolute;#}
+{#            top:54.5%;#}
+{#            left:53%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+        #lay-mco4-5{
+            position: absolute;
+            top:54.5%;
+            left:52%;
+            font-size: 245%;
+            z-index: 15;
+        }
+        #lay-mco4-6{
+            position: absolute;
+            top:65%;
+            left:53%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco4-7{
+            position: absolute;
+            top:75.5%;
+            left:53%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco4-8{
+            position: absolute;
+            top:86%;
+            left:53%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-1{
+           position: absolute;
+            top:5.5%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-2{
+            position: absolute;
+            top:16%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-3{
+            position: absolute;
+            top:26.5%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-4{
+            position: absolute;
+            top:37%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-5{
+            position: absolute;
+            top:54.5%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-6{
+            position: absolute;
+            top:65%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-7{
+            position: absolute;
+            top:75.5%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco5-8{
+            position: absolute;
+            top:86%;
+            left:68%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco6-1{#}
+{#           position: absolute;#}
+{#            top:5.5%;#}
+{#            left:83%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+        #lay-mco6-1{
+           position: absolute;
+            top:5.5%;
+            left:83%;
+            font-size: 245%;
+            z-index: 15;
+        }
+        #lay-mco6-2{
+            position: absolute;
+            top:16%;
+            left:83%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco6-3{
+            position: absolute;
+            top:26.5%;
+            left:83%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco6-4{
+            position: absolute;
+            top:37%;
+            left:83%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+{#        #lay-mco6-5{#}
+{#            position: absolute;#}
+{#            top:54.5%;#}
+{#            left:83%;#}
+{#            width:10.5%;#}
+{#            height:8.5%;#}
+{#            border-radius:12%;#}
+{#            background-color: #3c763d;#}
+{#            z-index: 15;#}
+{#        }#}
+        #lay-mco6-5{
+            position: absolute;
+            top:54.5%;
+            left:83%;
+            font-size: 245%;
+            z-index: 15;
+        }
+        #lay-mco6-6{
+            position: absolute;
+            top:65%;
+            left:83%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco6-7{
+            position: absolute;
+            top:75.5%;
+            left:83%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        #lay-mco6-8{
+            position: absolute;
+            top:86%;
+            left:83%;
+            width:10.5%;
+            height:8.5%;
+            border-radius:12%;
+            background-color: #3c763d;
+            z-index: 15;
+        }
+        .m1,.m2,.m3,.m4,.m5,.m6
+        {
+                transition: background-color 0.5s ease-out;
+                -webkit-transition: background-color 0.5s ease-out;
+        }
+        #lighttopleftdiv{
+            position: absolute;
+            top:18.5%;
+            left:45.4%;
+            z-index: 3;
+        }
+        #lightbottomleftdiv{
+            position: absolute;
+            top:28.5%;
+            left:45.4%;
+            z-index: 3;
+        }
+        #lighttopleft{
+            position: absolute;
+            top:18.5%;
+            left:45.4%;
+            z-index: 20;
+        }
+        #bumptopright{
+            position: absolute;
+            top:9.5%;
+            left:53%;
+            z-index: 20;
+        }
+        #lightbottomleft{
+            position: absolute;
+            top:28.5%;
+            left:45.4%;
+            z-index: 20;
+        }
+        #bumpbottomright{
+            position: absolute;
+            top:19.25%;
+            left:53%;
+            z-index: 20;
+        }
+        .notappear{
+            display: none;
+        }
+        #arrow1{
+            position: absolute;
+            top:5%;
+            left:68%;
+            z-index: 30;
+        }
+        #arrow2{
+            position: absolute;
+            top:20%;
+            left:67%;
+            z-index: 30;
+        }
+        #arrow3{
+            position: absolute;
+            top:29.75%;
+            left:67%;
+            z-index: 30;
+        }
+        #arrow4{
+            position: absolute;
+            top:53.5%;
+            left:68%;
+            z-index: 30;
+        }
+        @keyframes movearrow{
+            0%   {left: 67%}
+            100% {left: 69%}
+        }
+        @-webkit-keyframes movearrow{
+            0%   {left: 67%}
+            100% {left: 69%}
+        }
+        @keyframes movearrow2{
+            0%   {top:5%}
+            100% {top:1.5%}
+        }
+        @-webkit-keyframes movearrow2{
+            0%   {top:5%}
+            100% {top:1.5%}
+        }
+        @keyframes movearrow3{
+            0%   {left:67%}
+            100% {left:69%}
+        }
+        @-webkit-keyframes movearrow3{
+            0%   {left:67%}
+            100% {left:69%}
+        }
+        @keyframes movearrow4{
+            0%   {top:53.5%}
+            100% {top:50%}
+        }
+        @-webkit-keyframes movearrow4{
+            0%   {top:53.5%}
+            100% {top:50%}
+        }
+        .c{
+            animation:movearrow2 1s infinite ease-out;
+            -webkit-animation:movearrow2 1s infinite ease-out;
+        }
+        .d{
+            animation:movearrow 1s infinite ease-out;
+            -webkit-animation:movearrow 1s infinite ease-out;
+        }
+        .e{
+            animation:movearro3 1s infinite ease-out;
+            -webkit-animation:movearrow3 1s infinite ease-out;
+        }
+        .f{
+            animation:movearrow4 1s infinite ease-out;
+            -webkit-animation:movearrow4 1s infinite ease-out;
+        }
+
+{#        #switch1{#}
+{#            position: absolute;#}
+{#            top:8%;#}
+{#            left:26%;#}
+{#            z-index: 25;#}
+{#        }#}
+{#        #switch2{#}
+{#            position: absolute;#}
+{#            top:13%;#}
+{#            left:26%;#}
+{#            z-index: 25;#}
+{#        }#}
+{#        #switch3{#}
+{#            position: absolute;#}
+{#            top:18%;#}
+{#            left:26%;#}
+{#            z-index: 25;#}
+{#        }#}
+{#        #switch4{#}
+{#            position: absolute;#}
+{#            top:23%;#}
+{#            left:26%;#}
+{#            z-index: 25;#}
+{#        }#}
+        
+</style>
+</head>
+<body>
+
+<div>
+    <img id="arrow1" class="arrow c notappear" src="../static/arrow4.png" width="2.5%" height="5%">
+    <img id="arrow2" class="arrow d notappear" src="../static/arrow3.png" width="2.5%" height="5%">
+    <img id="arrow3" class="arrow e notappear" src="../static/arrow3.png" width="2.5%" height="5%">
+    <img id="arrow4" class="arrow f notappear" src="../static/arrow4.png" width="2.5%" height="5%">
+    <img id="fantopleft" class="fan" src="../static/myfan3.png" width="11%" height="21%">
+    <img id="elecfatopright"  src="../static/elecfa.png" width="9.5%" height="14.5%">
+    <img id="fanbottomleft" class="fan" src="../static/myfan3.png" width="11%" height="21%">
+    <img id="elecfabottonright" src="../static/elecfa.png" width="9.5%" height="14.5%">
+    <img id="lighttopleft" src="../static/light3.png" width="5.5%" height="10%">
+    <img id="lighttopleftdiv" class="notappear" src="../static/light3appear.png" width="5.5%" height="10%">
+    <img id="lightbottomleftdiv" class="notappear" src="../static/light3appear.png" width="5.5%" height="10%">
+    <img id="bumptopright" src="../static/waterbump.png" width="40%" height="66%">
+    <img id="lightbottomleft" src="../static/light3.png" width="5.5%" height="10%">
+    <img id="bumpbottomright" src="../static/waterbump.png" width="40%" height="66%">
+</div>
+<div id="layplace">
+    <div id="layborder">
+    <div class="layborder-mro" id="layborder-1"></div>
+    <div class="layborder-mro" id="layborder-2"></div>
+    <div class="layborder-mro" id="layborder-3"></div>
+    <div class="layborder-mco" id="layborder-4"></div>
+        <div class="layborder-mco" id="layborder-5"></div>
+        </div>
+    <div id="mcol1">
+    <div id="lay-mco1-1">Line1</div>
+    <div class="m1" id="lay-mco1-2"></div>
+    <div class="m1" id="lay-mco1-3"></div>
+    <div class="m1" id="lay-mco1-4"></div>
+        <div id="lay-mco1-5">Line7</div>
+    <div class="m1" id="lay-mco1-6"></div>
+    <div class="m1" id="lay-mco1-7"></div>
+    <div class="m1" id="lay-mco1-8"></div>
+    </div>
+    <div id="mcol2">
+
+    <div class="m2" id="lay-mco2-2"></div>
+    <div class="m2" id="lay-mco2-3"></div>
+    <div class="m2" id="lay-mco2-6"></div>
+    <div class="m2" id="lay-mco2-7"></div>
+        </div>
+    <div id="mcol3">
+    <div id="lay-mco3-1">Line3</div>
+    <div class="m3" id="lay-mco3-2"></div>
+    <div class="m3" id="lay-mco3-3"></div>
+    <div class="m3" id="lay-mco3-4"></div>
+            <div id="lay-mco3-5">Line9</div>
+    <div id="lay-mco3-6"></div>
+    <div id="lay-mco3-7"></div>
+    <div id="lay-mco3-8"></div>
+        </div>
+    <div class="m4" id="mcol4">
+    <div id="lay-mco4-1">Line4</div>
+    <div class="m4" id="lay-mco4-2"></div>
+    <div class="m4" id="lay-mco4-3"></div>
+    <div class="m4" id="lay-mco4-4"></div>
+            <div id="lay-mco4-5">Line10</div>
+    <div class="m4" id="lay-mco4-6"></div>
+    <div class="m4" id="lay-mco4-7"></div>
+    <div class="m4" id="lay-mco4-8"></div>
+        </div>
+    <div id="mcol5">
+    <div class="m5" id="lay-mco5-2"></div>
+    <div class="m5" id="lay-mco5-3"></div>
+    <div class="m5" id="lay-mco5-6"></div>
+    <div class="m5" id="lay-mco5-7"></div>
+        </div>
+    <div id="mcol6">
+    <div id="lay-mco6-1">Line6</div>
+    <div class="m6" id="lay-mco6-2"></div>
+    <div class="m6" id="lay-mco6-3"></div>
+    <div class="m6" id="lay-mco6-4"></div>
+            <div id="lay-mco6-5">Line12</div>
+    <div class="m6" id="lay-mco6-6"></div>
+    <div class="m6" id="lay-mco6-7"></div>
+    <div class="m6" id="lay-mco6-8"></div>
+</div>
+
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        工厂数据采集
+                    </h3>
+                </div>
+                     <table class="table" border="0">
+                        <tr><td>温度</td><td id="a1">0</td></tr>
+                         <tr><td>湿度</td><td id="a2">0</td></tr>
+                         <tr><td>光照</td><td id="a3">0</td></tr>
+                         <tr><td>CO2</td> <td id="a4">0</td></tr>
+                        <tr><td>PM2.5</td><td id="a5">0</td></tr>
+                         <tr><td>水压</td><td id="a6">0</td></tr>
+                     </table>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        设备自动开关
+                    </h3>
+                </div>
+                     <table class="table" border="0">
+                         <tr><td>照明</td><td> <label><input id="switch1" class="mui-switch mui-switch-animbg"  type="checkbox"></label></td></tr>
+                        <tr><td>水泵</td><td>  <label><input id="switch2" class="mui-switch mui-switch-animbg"  type="checkbox" ></label></td></tr>
+                        <tr><td>电磁阀</td><td> <label><input id="switch3" class="mui-switch mui-switch-animbg" type="checkbox"></label></td></tr>
+                         <tr><td>风扇</td><td> <label><input id="switch4" class="mui-switch mui-switch-animbg" type="checkbox"></label></td></tr>
+                     </table>
+            </div>
+            </div>
+        <div class="col-md-6">
+            </div>
+        <div class="col-md-2 col-xs-2 col-sm-2">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Line3
+                    </h3>
+                </div>
+                  <div>
+                     <table class="table" border="0">
+                         <tr><td>设备运行状态</td><td id="elecstatus">运行中</td></tr>
+                         <tr><td>日计划产量</td><td>1000</td></tr>
+                         <tr><td>完成产量</td><td>800</td></tr>
+                         <tr><td>不良率</td><td>20%</td></tr>
+                         <tr><td>当日运行时间</td><td id="elecgreentime">0</td></tr>
+                         <tr><td>停机时间</td><td id="elecyellowtime">0</td></tr>
+                        <tr><td>机器报警次数</td><td id="elecredcolor">0</td></tr>
+                        <tr><td>维修时间</td><td id="elecbluetime">0</td></tr>
+                     </table>
+                  </div>
+    </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+        <h2>自动点检系统</h2>
+       <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        水塔
+                    </h3>
+                </div>
+                <table class="table" border="0">
+                        <tr><td>液位</td><td id="b1">0</td></tr>
+                        <tr><td>PH值</td><td id="b2">0</td></tr>
+                    <tr><td>流量</td><td id="b3">0</td></tr>
+                     </table>
+            </div>
+            </div>
+                   <div class="col-md-2 col-xs-2 col-sm-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        空气压缩机
+                    </h3>
+                </div>
+                <table class="table" border="0">
+                        <tr><td>空气压力</td><td id="c1">0</td></tr>
+                     </table>
+            </div>
+
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+                <div class="panel-primary panel">
+                    <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Line10
+                    </h3>
+                </div>
+                <table class="table" border="0">
+                    <thead><td>单位:次/x秒</td><td>次数</td><td>时间</td></thead>
+                    <tr><td>设备运行</td><td id="run">0</td><td id="rotorredtime">0</td></tr>
+                    <tr><td>设备故障</td><td id="wrong">0</td><td id="rotoryellowtime">0</td></tr>
+                    <tr><td>设备检修</td><td id="repair">0</td><td id="rotorbluetime">0</td></tr>
+                    <tr><td>设备待机</td><td id="wait">0</td><td id="rotorgreentime">0</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+       <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        除尘管道
+                    </h3>
+                </div>
+                <table class="table" border="0">
+                        <tr><td>风速</td><td id="d1">0</td></tr>
+                        <tr><td>风压</td><td id="d2">0</td></tr>
+                     </table>
+            </div>
+            </div>
+                   <div class="col-md-2 col-xs-2 col-sm-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        锅炉
+                    </h3>
+                </div>
+                <table class="table" border="0">
+                        <tr><td>蒸汽压力</td><td id="e1">0</td></tr>
+                        <tr><td>水温</td><td id="e2">0</td></tr>
+                    <tr><td>水压</td><td id="e3">0</td></tr>
+                    <tr><td>耗电</td><td id="e4">0</td></tr>
+                     </table>
+            </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+<div class="container-fluid">
+       <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        消防系统
+                    </h3>
+                </div>
+                <table class="table" border="0">
+                        <tr><td>管道水压</td><td id="f1">0</td></tr>
+                     </table>
+            </div>
+            </div>
+        <div class="col-md-2 col-xs-2 col-sm-2">
+            </div>
+            <div class="col-md-6">
+
+            </div>
+
+            </div>
+        </div>
+{#        <button id="btn1">1</button>#}
+{#        <button id="btn2">2</button>#}
+{#        <button id="btn3">3</button>#}
+{#        <button id="btn4">4</button>#}
+{#        <button id="btn5">5</button>#}
+
+</body>
+<script>
+     $(document).ready(function(){
+        //调试动态效果
+        $('#btn2').click(function(){
+            $('.fan').addClass('b');
+        });
+        $('#btn1').click(function(){
+            $('#mcol1').children('div').css('background-color','red')
+        });
+        $('#btn3').click(function(){
+            $('#mcol2').children('div').css('background-color','blue')
+
+        });
+        $('#btn4').click(function(){
+            $('#lighttopleftdiv').css('background-color','blue')
+        });
+        $('#btn5').click(function(){
+            $('#arrow1').removeClass('notappear');
+            $('#arrow2').removeClass('notappear');
+            $('#arrow3').removeClass('notappear');
+            $('#arrow4').removeClass('notappear');
+            $('#arrow1').addClass('c');
+            $('#arrow2').addClass('d');
+            $('#arrow3').addClass('e');
+            $('#arrow4').addClass('f');
+                })
+
+         $('#switch1').click(function(){
+             if($('#switch1').is(':checked')){
+                 $('#lighttopleftdiv').removeClass('notappear')
+                 $('#lightbottomleftdiv').removeClass('notappear')
+                 $('#switch1').attr("checked",false)
+            }
+            else{
+                $('#lighttopleftdiv').addClass('notappear')
+                $('#lightbottomleftdiv').addClass('notappear')
+                $('#switch1').attr("checked",false)
+            }
+         })
+         $('#switch2').click(function(){
+             if($('#switch2').is(':checked')){
+                 $('#arrow2').removeClass('notappear');
+                $('#arrow3').removeClass('notappear');
+                $('#arrow2').addClass('d');
+                $('#arrow3').addClass('e');
+{#                document.getElementById('switch2').checked=false#}
+                 $('#switch2').attr("checked",false)
+            }
+            else{
+                 $('#arrow2').addClass('notappear');
+                $('#arrow3').addClass('notappear');
+                $('#arrow2').removeClass('d');
+                $('#arrow3').removeClass('e');
+                $('#switch2').attr("checked",false)
+            }
+         })
+         $('#switch3').click(function(){
+               if($('#switch3').is(':checked')){
+                    $('#arrow1').removeClass('notappear');
+                    $('#arrow4').removeClass('notappear');
+                    $('#arrow1').addClass('c');
+                    $('#arrow4').addClass('f');
+                    $('#switch3').attr("checked",false)
+            }
+            else{
+                $('#arrow1').addClass('notappear');
+                $('#arrow4').addClass('notappear');
+                $('#arrow1').removeClass('c');
+                $('#arrow4').removeClass('f');
+                $('#switch3').attr("checked",false)
+            }
+         })
+         $('#switch4').click(function(){
+               if($('#switch4').is(':checked')){
+                    $('.fan').addClass('b');
+                    $('#switch4').attr("checked",false)
+            }
+            else{
+                $('.fan').removeClass('b');
+                $('#switch4').attr("checked",false)
+            }
+         })
+        //color和数据的定时器
+        getcolorchange = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/statusfive/',
+                dataType:'json',
+                success:function(json){
+                    var lightstatus = eval(json);
+                    var leng = json.results.length;
+                    if(lightstatus) {
+{#                        console.log(json.results[0]);#}
+                        function line(){
+                            var linenum = json.results[0].status_change;
+                            var jqselector = '.m'+ linenum;
+{#                            console.log(jqselector);#}
+                            var linecolor = json.results[0].nid;
+                            //状态
+{#                            console.log(linenum)#}
+{#                            console.log(typeof(linecolor))#}
+{#                            console.log(linecolor)#}
+                            if (linenum === '3'){
+                                if (linecolor === 1){
+                                    document.getElementById('elecstatus').innerHTML='故障中';
+                                    $(jqselector).css('background-color','red')
+                                }
+                                else if (linecolor === 2){
+                                    document.getElementById('elecstatus').innerHTML='待机中';
+                                    $(jqselector).css('background-color','yellow')
+                                }
+                                else if (linecolor === 3){
+                                    document.getElementById('elecstatus').innerHTML='检修中';
+                                    $(jqselector).css('background-color','blue')
+                                }
+                                else if (linecolor === 4){
+                                    document.getElementById('elecstatus').innerHTML='运行中';
+                                    $(jqselector).css('background-color','#3c763d')
+                                }
+                                else {
+                                    console.log('status error!')
+                                }
+                            }
+                            else if(linenum === '4'){
+                                if (linecolor === 1){
+                                    $(jqselector).css('background-color','red')
+                                }
+                                else if(linecolor === 2){
+                                    $(jqselector).css('background-color','yellow')
+                                }
+                                else if(linecolor === 3){
+                                    $(jqselector).css('background-color','blue')
+                                }
+                                else if(linecolor === 4){
+                                    $(jqselector).css('background-color','#3c763d')
+                                }
+                                else {
+                                    console.log('no such light-color!')
+                                }
+                            }
+                            else{
+                                console.log('judge error!')
+                            }
+
+                        }
+
+                        line();
+                    }
+                    else
+                    {
+                        console.log('update failed!')
+                    }
+                }
+            })
+        },4700);
+         //Line10
+{#        getrotorcolorcount = setInterval(function(){#}
+{#            $.ajax({#}
+{#                type:'GET',#}
+{#                url:'/rotorcolorcount/',#}
+{#                dataType:'json',#}
+{#                success:function(json){#}
+{#                    var rotorcolorcount = eval(json);#}
+{#                    if(rotorcolorcount) {#}
+{#                        var run = document.getElementById('run');#}
+{#                        run.innerHTML = json.results[0].green+'次';#}
+{#                        var wait = document.getElementById('wait');#}
+{#                        wait.innerHTML = json.results[0].blue+'次';#}
+{#                        var repair = document.getElementById('repair');#}
+{#                        repair.innerHTML = json.results[0].yellow+'次';#}
+{#                        var wrong = document.getElementById('wrong');#}
+{#                        wrong.innerHTML = json.results[0].red+'次';#}
+{#                        }#}
+{#                    else#}
+{#                    {#}
+{#                        console.log('rotorcolorcount failed!')#}
+{#                    }#}
+{#                }#}
+{#            })#}
+{#        },4700);#}
+        geteleccolorcount = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/eleccolorcount/',
+                dataType:'json',
+                success:function(json){
+                    var eleccolorcount = eval(json);
+                    if(eleccolorcount) {
+                        var redcolor = json.results[0].red;
+{#                        var yellowcolor = json.results[0].yellow;#}
+{#                        var bluecolor  = json.results[0].blue;#}
+{#                        var greencolor  = json.results[0].green;#}
+                        var redfonta = redcolor+'次';
+                        document.getElementById('elecredcolor').innerHTML = redfonta;
+                    }
+                    else
+                    {
+                        console.log('rotorcolorcount failed!')
+                    }
+                }
+            })
+        },4700);
+{#        getrotortimecount = setInterval(function(){#}
+{#            $.ajax({#}
+{#                type:'GET',#}
+{#                url:'/rotortimecount/',#}
+{#                dataType:'json',#}
+{#                success:function(json){#}
+{#                    var rotortimecount = eval(json);#}
+{#                    if(rotortimecount) {#}
+{#                        var redtime = json.results[0].red;#}
+{#                        var yellowtime = json.results[0].yellow;#}
+{#                        var bluetime = json.results[0].blue;#}
+{#                        var greentime = json.results[0].green;#}
+{#                        document.getElementById('rotorredtime').innerHTML=redtime;#}
+{#                        document.getElementById('rotoryellowtime').innerHTML=yellowtime;#}
+{#                        document.getElementById('rotorbluetime').innerHTML=bluetime;#}
+{#                        document.getElementById('rotorgreentime').innerHTML=greentime;#}
+{#                    }#}
+{#                    else#}
+{#                    {#}
+{#                        console.log('rotortimecount failed!')#}
+{#                    }#}
+{#                }#}
+{#            })#}
+{#        }#}
+{##}
+{#        ,4700);#}
+        getelectimecount = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/electimecount/',
+                dataType:'json',
+                success:function(json){
+                    var electimecount = eval(json);
+                    console.log(json)
+                    if(electimecount) {
+
+{#                        var redtime = json.results[0].red;#}
+{#                        var yellowtime = json.results[0].yellow;#}
+                        console.log(json)
+                        console.log(typeof(json))
+                        var bluetime = json.results[0].blue;
+                        var greentime = json.results[0].green;
+                        document.getElementById('elecyellowtime').innerHTML=electimecount.results[0].randy;
+                        document.getElementById('elecbluetime').innerHTML=bluetime;
+                        document.getElementById('elecgreentime').innerHTML=greentime;
+                    }
+                    else
+                    {
+                        console.log('rotortimecount failed!')
+                    }
+                }
+            })
+        }
+
+        ,4700)
+
+         getboiler = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/boiler/',
+                dataType:'json',
+                success:function(json){
+                    var boiler = eval(json);
+                    if(boiler) {
+                        var temperature = json.results[0].temperature;
+                        var airpressure = json.results[0].airpressure;
+                        var waterpressure= json.results[0].waterpressure;
+                        var elec= json.results[0].elec;
+                        document.getElementById('e1').innerHTML=temperature+' °C';
+                        document.getElementById('e2').innerHTML=airpressure+' MPa';
+                        document.getElementById('e3').innerHTML=waterpressure+' MPa';
+                        document.getElementById('e4').innerHTML=elec+' kw';
+
+                    }
+                    else
+                    {
+                        console.log('boiler failed!')
+                    }
+                }
+            })
+        }
+
+        ,4700)
+
+
+
+         getairMach = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/airMach/',
+                dataType:'json',
+                success:function(json){
+                    var airMach = eval(json);
+                    if(airMach) {
+                        var airpressure = json.results[0].airpressure;
+                        document.getElementById('c1').innerHTML=airpressure+' MPa';
+
+                    }
+                    else
+                    {
+                        console.log('airMach failed!')
+                    }
+                }
+            })
+        }
+
+        ,4700)
+
+
+         getpipe = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/pipe/',
+                dataType:'json',
+                success:function(json){
+                    var pipe = eval(json);
+                    if(pipe) {
+                        var speed = json.results[0].speed;
+                        var pressure = json.results[0].pressure;
+                        document.getElementById('d1').innerHTML=speed+' m/s' ;
+                        document.getElementById('d2').innerHTML=pressure+' MPa';
+
+                    }
+                    else
+                    {
+                        console.log('boiler failed!')
+                    }
+                }
+            })
+        }
+
+        ,4700)
+
+
+         getfactorydata = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/factorydata/',
+                dataType:'json',
+                success:function(json){
+                    var factorydata = eval(json);
+                    if(factorydata) {
+                        var temperature= json.results[0].temperature;
+                        var humidity = json.results[0].humidity;
+                        var sun = json.results[0].sun;
+                        var co2 = json.results[0].co2;
+                        var PM  = json.results[0].PM ;
+                        var waterpressure = json.results[0].waterpressure;
+                        document.getElementById('a1').innerHTML=temperature+' °C';
+                        document.getElementById('a2').innerHTML=humidity+' %RH';
+                        document.getElementById('a3').innerHTML=sun+' Lux';
+                        document.getElementById('a4').innerHTML=co2+' ppm';
+                        document.getElementById('a5').innerHTML=PM+' 千粒/升';
+                        document.getElementById('a6').innerHTML=waterpressure+' MPa';
+                    }
+                    else
+                    {
+                        console.log('boiler failed!')
+                    }
+                }
+            })
+        }
+
+        ,4700)
+
+         getfireProSys = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/fireProSys/',
+                dataType:'json',
+                success:function(json){
+                    var fireProSys = eval(json);
+                    if(fireProSys) {
+                        var waterpressure = json.results[0].waterpressure+' MPa';
+                        document.getElementById('f1').innerHTML=waterpressure;
+
+                    }
+                    else
+                    {
+                        console.log('boiler failed!')
+                    }
+                }
+            })
+        }
+
+        ,4700)
+
+         getwaterTower = setInterval(function(){
+            $.ajax({
+                type:'GET',
+                url:'/waterTower/',
+                dataType:'json',
+                success:function(json){
+                    var waterTower= eval(json);
+                    if(waterTower) {
+                        var height = json.results[0].height;
+                        var ph = json.results[0].ph;
+                        var flow = json.results[0].flow;
+                        document.getElementById('b1').innerHTML=height+' MPa';
+                        document.getElementById('b2').innerHTML=ph;
+                        document.getElementById('b3').innerHTML=flow+' L/MIN';
+
+                    }
+                    else
+                    {
+                        console.log('boiler failed!')
+                    }
+                }
+            })
+        }
+
+        ,4700)
+
+
+         //自动开关
+         getswitch1 = setInterval(function() {
+                     $.ajax({
+                         type: 'GET',
+                         url: '/switchcontrol1/',
+                         dataType: 'json',
+                         success: function (json) {
+                             var switchcontrol1 = eval(json);
+                             if (switchcontrol1) {
+                                 var switch1 = json.results[0].switch1;
+                                 console.log(switch1)
+                                 console.log(typeof(switch1))
+                                 if (switch1 === 1) {
+                                     $('#switch1').prop("checked", true)
+                                     $('#lighttopleftdiv').removeClass('notappear')
+                                     $('#lightbottomleftdiv').removeClass('notappear')
+                                 }
+                                 else {
+                                     $('#switch1').prop("checked", false)
+                                     $('#lighttopleftdiv').addClass('notappear')
+                                     $('#lightbottomleftdiv').addClass('notappear')
+                                 }
+                             }
+                         }
+                     })
+                 }
+        ,61000)
+
+          getswitch2 = setInterval(function() {
+             $.ajax({
+                 type: 'GET',
+                 url: '/switchcontrol2/',
+                 dataType: 'json',
+                 success: function (json) {
+                     var switchcontrol2 = eval(json);
+                     if (switchcontrol2) {
+                         var switch2 = json.results[0].switch2;
+                         if (switch2 === 1) {
+                            $('#switch2').prop("checked",true)
+                            $('#arrow2').removeClass('notappear');
+                            $('#arrow3').removeClass('notappear');
+                            $('#arrow2').addClass('d');
+                            $('#arrow3').addClass('e');
+                         }
+                         else {
+                            $('#switch2').prop("checked",false)
+                            $('#arrow2').addClass('notappear');
+                            $('#arrow3').addClass('notappear');
+                            $('#arrow2').removeClass('d');
+                            $('#arrow3').removeClass('e');
+                         }
+                     }
+                 }
+             })
+         }
+        ,61000)
+
+          getswitch3 = setInterval(function() {
+             $.ajax({
+                 type: 'GET',
+                 url: '/switchcontrol3/',
+                 dataType: 'json',
+                 success: function (json) {
+                     var switchcontrol3 = eval(json);
+                     if (switchcontrol3) {
+                         var switch3 = json.results[0].switch3;
+                         if (switch3 === 1) {
+                            $('#switch3').prop("checked",true)
+                            $('#arrow1').removeClass('notappear');
+                            $('#arrow4').removeClass('notappear');
+                            $('#arrow1').addClass('c');
+                            $('#arrow4').addClass('f');
+                         }
+                         else {
+                            $('#switch3').prop("checked",false)
+                            $('#arrow1').addClass('notappear');
+                            $('#arrow4').addClass('notappear');
+                            $('#arrow1').removeClass('c');
+                            $('#arrow4').removeClass('f');
+                         }
+                     }
+                 }
+             })
+         }
+        ,61000)
+
+
+          getswitch4 = setInterval(function() {
+             $.ajax({
+                 type: 'GET',
+                 url: '/switchcontrol4/',
+                 dataType: 'json',
+                 success: function (json) {
+                     var switchcontrol4 = eval(json);
+                     if (switchcontrol4) {
+                         var switch4 = json.results[0].switch4;
+                         if (switch4 === 1) {
+                            $('#switch4').prop("checked",true)
+                            $('.fan').addClass('b');
+                         }
+                         else {
+                            $('#switch4').prop("checked",false)
+                            $('.fan').removeClass('b');
+                         }
+                     }
+                 }
+             })
+         }
+        ,61000)
+
+{#           getswitch = setInterval(function(){#}
+{#            $.ajax({#}
+{#                type:'GET',#}
+{#                url:'/autoSwitch/',#}
+{#                dataType:'json',#}
+{#                success:function(json){#}
+{#                    var autoSwitch = eval(json);#}
+{#                    if(autoSwitch) {#}
+{#                        var s1 = json.results[0].light;#}
+{#                        var s2 = json.results[0].water;#}
+{#                        var s3 = json.results[0].elec;#}
+{#                        var s4 = json.results[0].fan;#}
+{#                        if(s1===1){#}
+{#                            $('#switch1').attr("checked",true)#}
+{#                            $('#lighttopleftdiv').removeClass('notappear')#}
+{#                            $('#lightbottomleftdiv').removeClass('notappear')#}
+{#                        }#}
+{#                        else{#}
+{#                            $('#switch1').attr("checked",false)#}
+{#                            $('#lighttopleftdiv').addClass('notappear')#}
+{#                            $('#lightbottomleftdiv').addClass('notappear')#}
+{#                        }#}
+{#                        if(s2===1){#}
+{#                            $('#switch2').attr("checked",true)#}
+{#                            $('#arrow2').removeClass('notappear');#}
+{#                            $('#arrow3').removeClass('notappear');#}
+{#                            $('#arrow2').addClass('d');#}
+{#                            $('#arrow3').addClass('e');#}
+{#                        }#}
+{#                        else{#}
+{#                            $('#switch2').attr("checked",false)#}
+{#                            $('#arrow2').addClass('notappear');#}
+{#                            $('#arrow3').addClass('notappear');#}
+{#                            $('#arrow2').removeClass('d');#}
+{#                            $('#arrow3').removeClass('e');#}
+{##}
+{#                        }#}
+{#                        if(s3===1){#}
+{#                            $('#switch3').attr("checked",true)#}
+{#                            $('#arrow1').removeClass('notappear');#}
+{#                            $('#arrow4').removeClass('notappear');#}
+{#                            $('#arrow1').addClass('c');#}
+{#                            $('#arrow4').addClass('f');#}
+{#                        }#}
+{#                        else{#}
+{#                            $('#switch3').attr("checked",false)#}
+{#                            $('#arrow1').addClass('notappear');#}
+{#                            $('#arrow4').addClass('notappear');#}
+{#                            $('#arrow1').removeClass('c');#}
+{#                            $('#arrow4').removeClass('f');#}
+{#                        }#}
+{#                        if(s4===1){#}
+{#                            $('#switch4').attr("checked",true)#}
+{#                            $('.fan').addClass('b');#}
+{#                        }#}
+{#                        else{#}
+{#                            $('#switch4').attr("checked",false)#}
+{#                            $('.fan').removeClass('b');#}
+{#                        }#}
+{#                    }#}
+{#                    else#}
+{#                    {#}
+{#                        console.log('autoSwitch failed!')#}
+{#                    }#}
+{#                }#}
+{#            })#}
+{#        }#}
+{##}
+{#        ,7000)#}
+{#         #}
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //设置 checkbox ????
+        function switch1change(){
+            if(document.getElementById('switch1').checked===true){
+                $('#lighttopleftdiv').removeClass('notappear')
+                $('#lightbottomleftdiv').removeClass('notappear')
+                document.getElementById('switch1').checked=true
+            }
+            else if(document.getElementById('switch1').checked===false){
+                $('#lighttopleftdiv').addClass('notappear')
+                $('#lightbottomleftdiv').addClass('notappear')
+                document.getElementById('switch1').checked=false
+            }
+            else{
+                console.log('light is wrong!')
+            }
+        }
+        function switch2change(){
+            if(document.getElementById('switch2').checked=true){
+                console.log('there')
+                $('#arrow2').addClass('notappear');
+                $('#arrow3').addClass('notappear');
+                $('#arrow2').removeClass('d');
+                $('#arrow3').removeClass('e');
+                document.getElementById('switch2').checked=false
+            }
+            else if(document.getElementById('switch2').checked=false){
+                console.log('here')
+                $('#arrow2').removeClass('notappear');
+                $('#arrow3').removeClass('notappear');
+                $('#arrow2').addClass('d');
+                $('#arrow3').addClass('e');
+                document.getElementById('switch2').checked=true
+            }
+            else{
+                console.log('pump is wrong!')
+            }
+        }
+        function switch3change(){
+            if(document.getElementById('switch3').checked=true){
+                $('#arrow1').removeClass('notappear');
+                $('#arrow4').removeClass('notappear');
+                $('#arrow1').addClass('c');
+                $('#arrow4').addClass('f');
+                document.getElementById('switch3').checked=true
+            }
+            else if(document.getElementById('switch3').checked=false){
+                $('#arrow1').addClass('notappear');
+                $('#arrow4').addClass('notappear');
+                $('#arrow1').removeClass('c');
+                $('#arrow4').removeClass('f');
+                document.getElementById('switch3').checked=false
+            }
+            else{
+                console.log('elecfa is wrong!')
+            }
+        }
+        function switch4change(){
+            if(document.getElementById('switch4').checked=true){
+                $('.fan').addClass('b');
+                document.getElementById('switch4').checked=true
+            }
+            else if(document.getElementById('switch4').checked=false){
+                $('.fan').removeClass('b');
+                document.getElementById('switch4').checked=false
+            }
+            else{
+                console.log('fan is wrong!')
+            }
+        }
+
+
+
+</script>
+</html>
