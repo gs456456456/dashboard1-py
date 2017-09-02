@@ -1,7 +1,7 @@
 from django.db import models
 import datetime
 from django.utils import timezone
-
+from datetime import datetime
 # class light(models.Model):
 #     name = models.TextField()
 #     def __str__(self):
@@ -11,7 +11,7 @@ from django.utils import timezone
 class lightStatus(models.Model):
     nid = models.IntegerField()
     status_change = models.TextField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
     def __str__(self):
         return self.status_change
 
@@ -24,7 +24,7 @@ class factoryData(models.Model):
     PM = models.DecimalField(max_digits=3, decimal_places=1)
     waterpressure = models.DecimalField(max_digits=4, decimal_places=3)
     # waterpressure = models.IntegerField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 
 # class temperatureFac(models.Model):
@@ -58,7 +58,7 @@ class autoSwitch(models.Model):
     water = models.IntegerField()
     elec = models.IntegerField()
     fan = models.IntegerField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
     def __str__(self):
         return self.light
 
@@ -90,35 +90,35 @@ class waterTower(models.Model):
      # height = models.IntegerField()
      ph = models.IntegerField()
      flow = models.IntegerField()
-     now = models.DateTimeField(default=timezone.now)
+     now = models.DateTimeField(default=datetime.now)
 
 class airMach(models.Model):
     airpressure = models.IntegerField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class pipe(models.Model):
     speed = models.IntegerField()
     pressure = models.IntegerField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class boiler(models.Model):
     temperature = models.IntegerField()
     airpressure = models.IntegerField()
     waterpressure = models.IntegerField()
     elec = models.IntegerField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 
 class fireProSys(models.Model):
     waterpressure = models.IntegerField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class rotorColorCount(models.Model):
     red = models.TextField()
     yellow = models.TextField()
     blue = models.TextField()
     green = models.TextField()
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 
 class elecColorCount(models.Model):
@@ -126,14 +126,14 @@ class elecColorCount(models.Model):
     yellow = models.CharField(max_length=30)
     blue = models.CharField(max_length=30)
     green = models.CharField(max_length=30)
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class rotorTimeCount(models.Model):
     red = models.CharField(max_length=30)
     yellow = models.CharField(max_length=30)
     blue = models.CharField(max_length=30)
     green = models.CharField(max_length=30)
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 
 class elecTimeCount(models.Model):
@@ -142,7 +142,7 @@ class elecTimeCount(models.Model):
     blue = models.CharField(max_length=30)
     green = models.CharField(max_length=30)
     randy = models.CharField(max_length=30)
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class topicGet(models.Model):
     nid = models.CharField(max_length=10)
@@ -154,7 +154,7 @@ class topicGet(models.Model):
 class configtemp(models.Model):
     temperaturemax = models.DecimalField('温度上限',max_digits=4, decimal_places=1)
     temperaturemin = models.DecimalField('温度下限',max_digits=4, decimal_places=1)
-    now = models.DateTimeField('设置时间',default=timezone.now)
+    now = models.DateTimeField('设置时间',default=datetime.now)
     def __str__(self):
         return '温度设置'
     class Meta:
@@ -163,7 +163,7 @@ class configtemp(models.Model):
 class configsun(models.Model):
     sunmax = models.IntegerField('光照上限')
     sunmin = models.IntegerField('光照下限')
-    now = models.DateTimeField('设置时间',default=timezone.now)
+    now = models.DateTimeField('设置时间',default=datetime.now)
     def __str__(self):
         return '光照设置'
     class Meta:
@@ -172,7 +172,7 @@ class configsun(models.Model):
 class configwater(models.Model):
     waterpressuremax = models.DecimalField('水压上限',max_digits=10, decimal_places=5)
     waterpressuremin = models.DecimalField('水压下限',max_digits=10, decimal_places=5)
-    now = models.DateTimeField('设置时间',default=timezone.now)
+    now = models.DateTimeField('设置时间',default=datetime.now)
     def __str__(self):
         return '水压设置'
     class Meta:
@@ -180,20 +180,26 @@ class configwater(models.Model):
 
 class switchcontrol1(models.Model):
     switch1 = models.IntegerField(default=2)
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class switchcontrol2(models.Model):
     switch2 = models.IntegerField(default=2)
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class switchcontrol3(models.Model):
     switch3 = models.IntegerField(default=2)
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
 class switchcontrol4(models.Model):
     switch4 = models.IntegerField(default=2)
-    now = models.DateTimeField(default=timezone.now)
+    now = models.DateTimeField(default=datetime.now)
 
+class sendtomqtt(models.Model):
+    s1 = models.CharField(max_length=6)
+    s2 = models.CharField(max_length=6)
+    s3 = models.CharField(max_length=6)
+    s4 = models.CharField(max_length=6)
+    now = models.DateTimeField(default=datetime.now)
 # Create your models here.
 
 

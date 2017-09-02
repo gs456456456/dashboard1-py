@@ -16,6 +16,7 @@ import threading
 import json
 import random
 import arrow
+import queue
 import paho.mqtt.client as mqtt
 from paho.mqtt.client import connack_string
 from app1.models import lightStatus
@@ -23,13 +24,20 @@ from app1 import models
 from django.utils import timezone
 import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
+from django.http import HttpResponse
 
-
-MQTT_SERVER = "192.168.1.2"
+MQTT_SERVER = "127.0.0.1"
 MQTT_PORT = 1883
 MQTT_KEEPALIVE = 60
-MQTT_TOPIC_PREFIX = "/zigbee/"
+MQTT_TOPIC_PREFIX = "/SwitchStatus"
+# MQTT_TOPIC_PREFIX2 = "/iotgateway"
 MQTT_SEND_INTERVAL = 1
+myqueue = queue.Queue()##### switchcontrol 数据库通信
+# s1 = ''
+# s2 = ''
+# s3 = ''
+# s4 = ''
+# s5 = {}
 
 
 class DeviceAgent(threading.Thread):
@@ -38,7 +46,7 @@ class DeviceAgent(threading.Thread):
                 connect to local broker
     """
 
-    def __init__(self):
+    def __init__(self,q):
         super(DeviceAgent, self).__init__()
         self._stop = threading.Event()
         self._stop.clear()
@@ -54,6 +62,25 @@ class DeviceAgent(threading.Thread):
         self.targetlist4 = []
         self.targetlist5 = []
         self.targetlist6 = []
+        self.threading = []
+        self.q = q
+        self.a_list = 0
+        self.b_list = 0
+        self.c_list = 0
+        self.d_list = 0
+        self.copya = 0
+        self.copyb = 0
+        self.copyc = 0
+        self.copyd = 0
+        self.redislist1 = {}
+        self.redislist2 = {}
+        self.redislist3 = {}
+        self.redislist4 = {}
+        self.copy1 = {}
+        self.copy2 = {}
+        self.copy3 = {}
+        self.copy4 = {}
+
 
     def init_mqtt_client(self):
         self.mqttp = {}
@@ -82,19 +109,60 @@ class DeviceAgent(threading.Thread):
         # logger.warning('loop_start remote_mqtt_client')
         return True
 
+
     def run(self):
         # remote mqtt parameters
         if not self.init_mqtt_client():
             self.stop()
-
         # self.loop_forever_local_mqtt_client()
         while not self._stop.is_set():
             # read from modbus tcp server
-            if self.mqttConnected:
-                self.random_interval()
-                # self.sender_simulation()
-                # time.sleep(MQTT_SEND_INTERVAL)
-                self.mqttc.loop_forever()
+            # if self.mqttConnected:
+            #     self.sender_simulation()
+            #     time.sleep(MQTT_SEND_INTERVAL)
+            # self.mqttc.loop_forever()
+            # print(self.q)
+            # self.random_interval()
+            self.switch_send()
+            if self.copy1 !=self.redislist1 and self.redislist1:
+                # print(1)
+                jsonObject1 = self.redislist1
+                topic = '/SwitchStatus'
+                self.r_send(topic, jsonObject1)
+            self.copy1 = self.redislist1
+            self.redislist1 = {}
+                # print(self.redislist1)
+
+
+            if self.copy2 !=self.redislist2 and self.redislist2:
+                jsonObject2 = self.redislist2
+                topic = '/SwitchStatus'
+                self.r_send(topic, jsonObject2)
+            self.copy2 = self.redislist2
+            self.redislist2 = {}
+                # print(self.redislist2)
+
+
+            if self.copy3 !=self.redislist3 and self.redislist3:
+                jsonObject3 = self.redislist3
+                topic = '/SwitchStatus'
+                self.r_send(topic, jsonObject3)
+            self.copy3 = self.redislist3
+            self.redislist3 = {}
+                # print(self.redislist3)
+
+
+            if self.copy4 !=self.redislist4 and self.redislist4:
+                jsonObject4 = self.redislist4
+                topic = '/SwitchStatus'
+                self.r_send(topic, jsonObject4)
+            self.copy4 = self.redislist4
+            self.redislist4 = {}
+                # print(self.redislist4)
+
+
+
+
 
     def stop(self):
         self._stop.set()
@@ -128,10 +196,19 @@ class DeviceAgent(threading.Thread):
     #     models.factoryData.objects.create(temperature=data['temp'],humidity=data['humi'],sun=data['sun'],co2=data['co2'],PM=data['pm'],waterpressure=data['waterpressure'])
 
     #
-    # def r_send(self, topic, data):
-    #     if self.mqttc is None:
-    #         return
-    #     Thread=[]
+
+
+    def r_send(self, topic, data):
+        if self.mqttc is None:
+            return
+        msg = json.dumps(data)
+        # mqttMessageInfo = self.mqttc.publish(topic, msg, qos=2)
+        self.mqttc.publish(topic, msg, qos=2)
+        print("send: " + topic + " " + str(data) + "\n")
+
+
+
+        # Thread=[]
     #     t1 = threading.Thread(target=self.lightstatus_create,args=(data,))
     #     Thread.append(t1)
     #     t2 = threading.Thread(target=self.deviceswitch_create,args=(data,))
@@ -150,10 +227,7 @@ class DeviceAgent(threading.Thread):
     #         t.setDaemon(True)
     #         t.start()
     #
-    #     msg = json.dumps(data)
-    #     # mqttMessageInfo = self.mqttc.publish(topic, msg, qos=2)
-    #     self.mqttc.publish(topic, msg, qos=2)
-    #     print("send: " + topic + " " + str(data) + "\n")
+
 
 
     ####接收mqtt数据并存入数据库
@@ -177,83 +251,145 @@ class DeviceAgent(threading.Thread):
             print('工厂数据错误!')
 
 
-    def temp_mysql_save(self):
+    def temp_mysql_save(self,jsonObject):
         # targetlist = []
-        temp = list(models.topicGet.objects.filter(nid='2',ch='1').values_list('m'))
-        self.append_list(temp,self.targetlist1)
+        # self.append_list(jsonObject['m'],self.targetlist1)
+        self.targetlist1.append(jsonObject['m'])
         self.cache(self.targetlist1,'temp',len(self.targetlist1))
         self.targetlist1 = []
 
-    def humi_mysql_save(self):
+    def humi_mysql_save(self,jsonObject):
         # targetlist = []
-        humi = list(models.topicGet.objects.filter(nid='2',ch='2').values_list('m'))
-        self.append_list(humi,self.targetlist2)
+        # self.append_list(jsonObject['m'],self.targetlist2)
+        self.targetlist2.append(jsonObject['m'])
         self.cache(self.targetlist2,'humi',len(self.targetlist2))
         self.targetlist2 = []
 
-    def sun_mysql_save(self):
+    def sun_mysql_save(self,jsonObject):
         # targetlist = []
-        sun = list(models.topicGet.objects.filter(nid='2',ch='3').values_list('m'))
-        self.append_list(sun,self.targetlist3)
+        # sun = list(models.topicGet.objects.filter(nid='2',ch='3').values_list('m'))
+        # self.append_list(jsonObject['m'],self.targetlist3)
+        self.targetlist3.append(jsonObject['m'])
         self.cache(self.targetlist3,'sun',len(self.targetlist3))
         self.targetlist3 = []
 
-    def pm_mysql_save(self):
+    def pm_mysql_save(self,jsonObject):
         # targetlist = []
-        PM = list(models.topicGet.objects.filter(nid='3',ch='1').values_list('m'))
-        self.append_list(PM,self.targetlist4)
+        # self.append_list(jsonObject['m'],self.targetlist4)
+        self.targetlist4.append(jsonObject['m'])
         self.cache(self.targetlist4,'pm',len(self.targetlist4))
         self.targetlist4 = []
 
-    def co2_mysql_save(self):
+    def co2_mysql_save(self,jsonObject):
         # targetlist = []
-        co2 = list(models.topicGet.objects.filter(nid='4',ch='1').values_list('m'))
-        self.append_list(co2,self.targetlist5)
+        # self.append_list(jsonObject['m'],self.targetlist5)
+        self.targetlist5.append(jsonObject['m'])
         self.cache(self.targetlist5,'co2',len(self.targetlist5))
         self.targetlist5 = []
 
     def pres_mysql_save(self, jsonObject):
         # targetlist = []
-        pres = list(models.topicGet.objects.filter(nid='1',ch='1').values_list('m'))
-        self.append_list(pres,self.targetlist6)
+        # pres = list(models.topicGet.objects.filter(nid='1',ch='1').values_list('m'))
+        # self.append_list(jsonObject['m'],self.targetlist6)
+        self.targetlist6.append(jsonObject['m'])
         self.cache(self.targetlist6,'waterpressure',len(self.targetlist6))
         self.targetlist6 = []
 
 
-    def lightmysql_save(self):
+    def lightmysql_save(self,jsonObject):
         targetlist = []
-        g = list(models.topicGet.objects.filter(nid='5',ch='3').values_list('m'))
-        self.append_list(g,targetlist)
-        for index, value in enumerate(targetlist):
-            if value=='True':
-                targetlist[index]=1
-            elif value=='False':
-                targetlist[index]=4
+        # g = list(models.topicGet.objects.filter(nid='5',ch='3').values_list('m'))
+        g = jsonObject['m']
+        # self.append_list(g,targetlist)
+        targetlist.append(g)
+        resultlist = []
         for x in targetlist:
+            if str(x)=='True':
+                resultlist.append(1)
+            elif str(x)=='False':
+                resultlist.append(4)
+        for x in resultlist:
             models.lightStatus.objects.create(nid=x,status_change=3)
 
-    def lightmysql_save2(self):
+    def lightmysql_save2(self,jsonObject):
         targetlist = []
-        h = list(models.topicGet.objects.filter(nid='5',ch='1').values_list('m'))
-        self.append_list(h,targetlist)
-        for index, value in enumerate(targetlist):
-            if value == '0.0' or float(value)>0:
-                targetlist[index]=2
+        # h = list(models.topicGet.objects.filter(nid='5',ch='1').values_list('m'))
+        h = jsonObject['m']
+        # self.append_list(h,targetlist)
+        targetlist.append(h)
+        resultlist = []
         for x in targetlist:
+            if str(x)=='True':
+                resultlist.append(2)
+            else:
+                pass
+        # print(resultlist)
+        for x in resultlist:
             models.lightStatus.objects.create(nid=x,status_change=3)
 
-    def lightmysql_save3(self):
+    def lightmysql_save3(self,jsonObject):
         targetlist = []
-        h = list(models.topicGet.objects.filter(nid='5',ch='2').values_list('m'))
-        self.append_list(h,targetlist)
-        for index, value in enumerate(targetlist):
-            if value == '0.0' or float(value)>0:
-                targetlist[index]=3
+        # h = list(models.topicGet.objects.filter(nid='5',ch='2').values_list('m'))
+        h = jsonObject['m']
+        # self.append_list(h,targetlist)
+        targetlist.append(h)
+        resultlist = []
         for x in targetlist:
+            if str(x)=='True':
+                resultlist.append(3)
+            else:
+                pass
+
+        # print(resultlist)
+        for x in resultlist:
             models.lightStatus.objects.create(nid=x,status_change=3)
 
+    def light2mysql_save1(self,jsonObject):
+        num = jsonObject['values'][0]['id']
+        status = jsonObject['values'][0]['v']
+        if str(status) == 'True':
+            status = 1
+        elif str(status) == 'False':
+            status = 2
+        else:
+            pass
+        models.lightStatus.objects.create(nid = 4,status_change=10)
 
 
+
+    def light2mysql_save2(self,jsonObject):
+        num = jsonObject['values'][0]['id']
+        status = jsonObject['values'][0]['v']
+        if str(status) == 'True':
+            status = 1
+        elif str(status) == 'False':
+            status = 2
+        else:
+            pass
+        models.lightStatus.objects.create(nid = 1,status_change=10)
+
+
+    def light2mysql_save3(self,jsonObject):
+        num = jsonObject['values'][0]['id']
+        status = jsonObject['values'][0]['v']
+        if str(status) == 'True':
+            status = 1
+        elif str(status) == 'False':
+            status = 2
+        else:
+            pass
+        models.lightStatus.objects.create(nid = 3,status_change=10)
+
+    def light2mysql_save4(self,jsonObject):
+        num = jsonObject['values'][0]['id']
+        status = jsonObject['values'][0]['v']
+        if str(status) == 'True':
+            status = 1
+        elif str(status) == 'False':
+            status = 2
+        else:
+            pass
+        models.lightStatus.objects.create(nid = 2,status_change=10)
 
 
     # The callback for when the client receives a CONNACK response from the
@@ -274,7 +410,10 @@ class DeviceAgent(threading.Thread):
         print(msg)
         self.mqttConnected = True
         topic = "/zigbee/#"
-        self.mqttc.subscribe(topic)
+        topic2 = "/iotgateway"
+        # self.mqttc.subscribe(topic)
+        self.mqttc.subscribe([(topic, 0), (topic2, 2)])
+
 
 
     # called when the client disconnects from the broker
@@ -294,39 +433,57 @@ class DeviceAgent(threading.Thread):
     # The callback for when a PUBLISH message is received from the server.
     def r_on_message(self, client, userdata, msg):
         print("received: " + msg.topic + " " + str(msg.payload))
-        topicid = msg.topic[-5]
-        topicch = msg.topic[-1]
+        # print("received: " + msg.topic2 + " " + str(msg.payload))
+        # topicid = msg.topic[-5]
+        # topicch = msg.topic[-1]
         try:
             jsonObject = json.loads(msg.payload.decode('utf-8'))
+            t = msg.topic
+            if "id1/ch1" in t:
+                self.pres_mysql_save(jsonObject)
+            elif "id2/ch1" in t:
+                self.temp_mysql_save(jsonObject)
+            elif "id2/ch2" in t:
+                self.humi_mysql_save(jsonObject)
+            elif "id2/ch3" in t:
+                self.sun_mysql_save(jsonObject)
+            elif "id3/ch1" in t:
+                self.pm_mysql_save(jsonObject)
+            elif "id4/ch1" in t:
+                self.co2_mysql_save(jsonObject)
+            elif "id5/ch3" in t:
+                self.lightmysql_save(jsonObject)
+            elif "id5/ch1" in t:
+                self.lightmysql_save2(jsonObject)
+            elif "id5/ch2" in t:
+                self.lightmysql_save3(jsonObject)
+            elif "iotgateway" in t and str(jsonObject['values'][0]['q'])=='True':
+                if "x1" in str(jsonObject['values'][0]['id']):
+                    self.light2mysql_save1(jsonObject)
+                elif "x2" in str(jsonObject['values'][0]['id']):
+                    self.light2mysql_save2(jsonObject)
+                elif "x3" in str(jsonObject['values'][0]['id']):
+                    self.light2mysql_save3(jsonObject)
+                elif "x4" in str(jsonObject['values'][0]['id']):
+                    self.light2mysql_save4(jsonObject)
+                else:
+                    pass
+            else:
+                pass
+
         except Exception as e:
             errStr = "JSON loads Exception from msg.payload: " + str(e)
             print(errStr)
+
             return
-        m = jsonObject['m']
-        ts = jsonObject['ts']
-        s = jsonObject['s']
+        # m = jsonObject['m']
+        # ts = jsonObject['ts']
+        # s = jsonObject['s']
         # models.topicGet.objects.create(nid=topicid,ch=topicch,m=m,ts=ts,s=s)
         # # print(jsonObject)
-        # self.lightmysql_save2()
-        # self.lightmysql_save3()
-        # self.lightmysql_save()
-        # 
-        # 
-        # 
-        # self.pm_mysql_save()
-        
         # self.co2_mysql_save()
-        t = msg.topic
-        if "id1/ch1" in t:
-            self.pres_mysql_save(jsonObject)
-        elif "id2/ch1" in t:
-            self.temp_mysql_save(jsonObject)
-        elif "id2/ch2" in t:
-            self.humi_mysql_save(jsonObject)
-        elif "id2/ch3" in t:
-            self.sun_mysql_save(jsonObject)
-        else:
-            pass
+
+
 
     def random_save(self,data):
         # self.deviceswitch_create(data)
@@ -339,15 +496,15 @@ class DeviceAgent(threading.Thread):
 
     def sender_simulation(self):
         payload = {}
-        # payload['d'] = round(100.0 * random.random(), 2)
-        # machine =  payload['m'] = random.randint(1,4)##红黄蓝绿灯
-        tagName = 'test'
-        topic = MQTT_TOPIC_PREFIX + "/" + tagName
-        # status = payload['s'] = 4 #电机组装线3 转子组装线4
+        tagName = 'SwitchStatus'
+        topic = MQTT_TOPIC_PREFIX + "/"
+        # status = payload['s'] = 4
         # payload['q'] = 192
         utc = arrow.utcnow()
         time = payload['ts'] = utc.format('YYYY-MM-DDTHH:mm:ss.SSSSSS') + "Z"#时间戳
-        # co2 = payload['co2'] = random.randint(300,1000)
+        # s1 = models.switchcontrol1.objects.order_by('-now').values_list('switch1')
+        # self.random_save(payload)
+         # co2 = payload['co2'] = random.randint(300,1000)
         # temp = payload['temp'] =random.randint(20,33)
         # humidity = payload['humi']=random.randint(0,100)
         # sunshine = payload['sun']=random.randint(1000,2000)
@@ -371,21 +528,110 @@ class DeviceAgent(threading.Thread):
         boilerelec = payload['boile']=random.randint(30,40)
         pipewaterpressure = payload['pipewp']=random.randint(300,500)
         self.random_save(payload)
-        # self.r_send(topic, payload)
+
+    def switch_append_list(self,origlist,targetlist):
+        for x in origlist:
+            targetlist.append(x)
+
+
+    def append_last_list(self,origlist,targetlist):
+        print(origlist[0][0])
+        for x in origlist:
+            print(x[0])
+            targetlist.append(x[0])
+            # for y in x:
+            #     print(y)
+            # for y in x[0]:
+            #     targetlist=y
+        # print(origlist[0])
+
+    def switch_send(self):
+        a  = list(models.switchcontrol1.objects.order_by('-now').values_list('switch1'))
+        b = list(models.switchcontrol2.objects.order_by('-now').values_list('switch2'))
+        c = list(models.switchcontrol3.objects.order_by('-now').values_list('switch3'))
+        d = list(models.switchcontrol4.objects.order_by('-now').values_list('switch4'))
+        if a:
+            # self.append_last_list(a,self.a_list)
+            self.a_list = a[0][0]
+            if self.a_list == 1:
+                self.a_list = True
+            elif self.a_list == 2:
+                self.a_list = False
+            else:
+                pass
+        if b:
+            # self.append_last_list(b,self.b_list)
+            self.b_list = b[0][0]
+            if self.b_list == 1:
+                self.b_list = True
+            elif self.b_list == 2:
+                self.b_list = False
+            else:
+                pass
+        if c:
+            # self.append_last_list(c,self.c_list)
+            self.c_list = c[0][0]
+            if self.c_list == 1:
+                self.c_list = True
+            elif self.c_list == 2:
+                self.c_list = False
+            else:
+                pass
+        if d:
+            # self.append_last_list(d,self.d_list)
+            self.d_list = d[0][0]
+            if self.d_list == 1:
+                self.d_list = True
+            elif self.d_list == 2:
+                self.d_list = False
+            else:
+                pass
+
+
+        if self.copya != self.a_list:
+            # if self.a_list:
+            self.redislist1 = {'values':[{"id":"s1","v":self.a_list,"q":True}]}
+                # models.switchcontrol1.objects.all().delete()
+        self.copya = self.a_list
+        # print(self.copya)
+
+        if self.copyb != self.b_list:
+            # if self.b_list:
+            self.redislist2 = {'values':[{"id":"s2","v":self.b_list,"q":True}]}
+                # models.switchcontrol2.objects.all().delete()
+        self.copyb = self.b_list
+
+        if self.copyc != self.c_list:
+            # if self.c_list:
+                self.redislist3 = {'values':[{"id":"s3","v":self.c_list,"q":True}]}
+                # models.switchcontrol3.objects.all().delete()
+        self.copyc = self.c_list
+
+        if self.copyd != self.d_list:
+            # if self.d_list:
+                self.redislist4 ={'values':[{"id":"s4","v":self.d_list,"q":True}]}
+                # models.switchcontrol4.objects.all().delete()
+        self.copyd  =self.d_list
+
 
     def random_interval(self):
         scheduler = BackgroundScheduler()
         scheduler.add_job(self.sender_simulation,trigger='interval', seconds=2)
+        # scheduler.add_job(self.switch_send,trigger='interval', seconds=1)
+        # scheduler.add_job(self.switch_send,trigger='interval', seconds=1)
         scheduler.start()
 
 
 if __name__ == "__main__":
-    da = DeviceAgent()
-    da.setDaemon(True)
+    da = DeviceAgent(myqueue)
     da.start()
-    try:
-        while da.isAlive():
-            pass
-    except KeyboardInterrupt:
-        print('stopped by keyboard')
-    print('main end')
+    da.join()
+
+#
+#     do = False
+# last_do = False
+#
+# if (do and not last_do) or (not do and last_do):
+#     pass
+#
+# do_last = do

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>各生产线情况</title>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+{#    <link rel="stylesheet" href="../static/less/datetimepicker.less">#}
+    <script src="../static/js/laydate/laydate.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <style>
+        #a1{
+            font-size: larger;
+        }
+        #a2{
+            font-size: larger;
+        }
+        #time{
+            font-size: larger;
+        }
+        .nodisplay{
+            visibility: hidden
+        }
+        .divline{
+            display:inline
+        }
+    </style>
+</head>
+
+<body id="change">
+<div class="container-fluid">
+{#<div class="panel panel-default">#}
+{#  <!-- Default panel contents -->#}
+{#  <div class="panel-heading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生产线状态</div>#}
+{#  <div class="panel-body">#}
+{#    <p>...</p>#}
+{#  </div>#}
+
+  <!-- Table -->
+
+  <table class="table table-striped" width="80%">
+      <thead>
+      <tr>
+          <th>
+         <div class="dropdown">
+		<div class="dropdown-toggle" data-toggle="dropdown" href="#" id="a1">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp生产线
+            <span class="caret"></span>    <input id="arrow1" type="text">
+            <div class="divline"></div>
+		</div>
+		<ul class="dropdown-menu" id="line">
+			<li><a href="#">Line3</a></li>
+			<li><a href="#">Line10</a></li>
+		</ul>
+
+	</div>
+          </th>
+          <th>
+              <div class="dropdown">
+		<div class="dropdown-toggle" data-toggle="dropdown" href="#" id="a2">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp运行情况
+            <span class="caret"></span>    <input id="arrow2" type="text">
+            <div class="divline"></div>
+		</div>
+		<ul class="dropdown-menu" id="status">
+			<li><a href="#">运行</a></li>
+			<li><a href="#">故障</a></li>
+			<li><a href="#">检修</a></li>
+            <li><a href="#">待机</a></li>
+{#			<li class="divider"></li>#}
+{#			<li><a href="#">分离的链接</a></li>#}
+		</ul>
+	</div>
+          </th>
+              <th>
+              <div id="time">
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp时间 &nbsp&nbsp<input type="text" id="test1"> <div class="divline" id="middle">~</div>   <input type="text" id="test2">
+            </div>
+{#            <span class="caret"></span>#}
+{#                  <span class="caret"  id="test1"></span>#}
+          </th>
+          <th>
+              <button id="submit"  class="btn btn-success btn-sm" >提交</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button id="back" class="btn btn-success btn-warning btn-sm">返回</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button id="reset" class="btn btn-primary btn-sm">重置</button>
+          </th>
+      </tr>
+
+      </thead>
+  {% load mytags %}
+  <tbody>
+    {% load pagination_tags %}
+    {% autopaginate a 23 %}
+    {% for item in a %}
+      <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp{{ item.status_change |change_line }}</td>
+                    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp&nbsp&nbsp{{ item.nid|change_status }}</td>
+          <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp{{ item.now |change_date}}</td>
+      <td></td>
+      <td></td>
+      </tr>
+            {% endfor %}
+</tbody>
+
+  </table>
+      {% paginate %}
+{#</div>#}
+{##}
+{#</div>#}
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+{#    var begindate;#}
+       var starttime
+       var endtime
+       var line
+        var status
+       laydate.render({
+            elem: '#test1',
+            type: 'datetime',//指定元素,
+            ready: function(date){},
+            done: function(value, date, endDate) {
+                starttime = JSON.stringify(date)
+                console.log(starttime)
+            }
+            })
+
+        laydate.render({
+            elem: '#test2',
+            type: 'datetime',
+            done: function(value, date, endDate) {
+                endtime = JSON.stringify(date)
+            }//指定元素
+            });
+
+//回调
+        $('#submit').click(function(){
+            if (starttime && endtime && line && status){
+{#                $.ajax({#}
+{#                             type:'POST',#}
+{#                             url:'/detail/',#}
+{#                             dataType:'json',#}
+{#                             success:function(json){#}
+{#                                 var boiler = eval(json);#}
+{#                                 if(boiler) {#}
+{#                                     var temperature = json.results[0].temperature;#}
+{#                                     var airpressure = json.results[0].airpressure;#}
+{#                                     var waterpressure= json.results[0].waterpressure;#}
+{#                                     var elec= json.results[0].elec;#}
+{#                                     document.getElementById('e1').innerHTML=temperature+' °C';#}
+{#                                     document.getElementById('e2').innerHTML=airpressure+' MPa';#}
+{#                                     document.getElementById('e3').innerHTML=waterpressure+' MPa';#}
+{#                                     document.getElementById('e4').innerHTML=elec+' kw';#}
+{##}
+{#                                 }#}
+{#                                 else#}
+{#                                 {#}
+{#                                     console.log('boiler failed!')#}
+{#                                 }#}
+{#                             }#}
+{#                         })#}
+            $.get('/detail/',{
+                st:starttime,
+                et:endtime,
+                line:line,
+                status:status
+            },function(data){
+                $('#change').html(data)
+                $('#test2').remove()
+                $('#test1').remove()
+                $('#middle').remove()
+                console.log('success')
+
+            })
+                       }
+            else{
+                alert('请输入完整筛选条件!')
+            }
+        })
+
+
+
+
+    $(document).ready(function(){
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+             });
+        $('#back').click(function(){
+            window.location.href = '/'
+        })
+        $('#reset').click(function(){
+            window.location.href ='/detail/'
+        })
+        $('#line').children('li').on('click', function() {
+            line = $(this).text()
+            $('#arrow1').val(line)
+                       })
+        $('#status').children('li').on('click', function() {
+            status = $(this).text()
+            $('#arrow2').val(status)
+                       })
+        })
+
+
+</script>

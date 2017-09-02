@@ -23,7 +23,7 @@ import datetime
 
 # from snippets.models import TestData
 
-MQTT_SERVER = "192.168.1.2"
+MQTT_SERVER = "127.0.0.1"
 MQTT_PORT = 1883
 MQTT_KEEPALIVE = 60
 MQTT_TOPIC_PREFIX = "/Kimstars"
@@ -209,8 +209,67 @@ class DeviceAgent(threading.Thread):
         time = payload['ts'] = utc.format('YYYY-MM-DDTHH:mm:ss.SSSSSS') + "Z"#时间戳
         self.r_send(topic, payload)
 
+            # # co2 = payload['co2'] = random.randint(300,1000)
+        # # temp = payload['temp'] =random.randint(20,33)
+        # # humidity = payload['humi']=random.randint(0,100)
+        # # sunshine = payload['sun']=random.randint(1000,2000)
+        # # PM = payload['pm']=random.randint(0,50)
+        # # # waterpressure = payload['waterpressure']=random.randint(0,10)
+        # # waterpressure = payload['waterpressure']=random.choice([0.002,0.001,-0.003])
+        # # switch1 = payload['sw1']=random.randint(1,2)
+        # # switch2 = payload['sw2']=random.randint(1,2)
+        # # switch3 = payload['sw3']=random.randint(1,2)
+        # # switch4 = payload['sw4']=random.randint(1,2)
+        # watertowerph = payload['wtph']=random.choice([3,6,9])
+        # # watertowerheight = payload['wthe']=random.randint(0,10)
+        # watertowerheight = payload['wthe']=random.choice([0.002,0.001,-0.003])
+        # watertowerflow= payload['wtfl']=random.choice([4,6,9])
+        # airpressure = payload['airp'] = random.randint(1000,2000)
+        # windspeed = payload['winds']=random.randint(10,20)
+        # windpressure = payload['windp']=random.randint(20,30)
+        # boilerpressure = payload['boilp']=random.randint(20,30)
+        # boilertemp = payload['boilt']=random.randint(20,30)
+        # boilerwaterpressure = payload['boilwp']=random.randint(1000,2000)
+        # boilerelec = payload['boile']=random.randint(30,40)
+        # pipewaterpressure = payload['pipewp']=random.randint(300,500)
 
 
+
+    def run(self):
+        t1 = threading.Thread(target=self.run1)
+        self.threading.append(t1)
+        t2 = threading.Thread(target=self.run2)
+        self.threading.append(t2)
+        for t in self.threading:
+            t.setDaemon(True)
+            t.start()
+
+    def run1(self):
+        # remote mqtt parameters
+        if not self.init_mqtt_client():
+            self.stop()
+
+        # self.loop_forever_local_mqtt_client()
+        while not self._stop.is_set():
+            # read from modbus tcp server
+            # if self.mqttConnected:
+            #     self.sender_simulation()
+            #     time.sleep(MQTT_SEND_INTERVAL)
+            self.mqttc.loop_forever()
+
+    def run2(self):
+        # remote mqtt parameters
+        if not self.init_mqtt_client():
+            self.stop()
+
+        # self.loop_forever_local_mqtt_client()
+        while not self._stop.is_set():
+            # read from modbus tcp server
+            if self.mqttConnected:
+            #     self.sender_simulation()
+            #     time.sleep(MQTT_SEND_INTERVAL)
+                self.r_send(MQTT_TOPIC_PREFIX,s5)
+                time.sleep(MQTT_SEND_INTERVAL)
 
 if __name__ == "__main__":
     da = DeviceAgent()
