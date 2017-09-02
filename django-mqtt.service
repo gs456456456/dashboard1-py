@@ -1,11 +1,11 @@
 [Unit]
-Description=ZIGBEE DATA FORWARDER
+Description=Django MQTT Client
 After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/home/kimstars/zigbee-dashboard
-ExecStart=/usr/bin/python3 /home/kimstars/zigbee-dashboard/app1/mqtt_sender.py
+WorkingDirectory=/home/kimstars/git/zigbee-dashboard/app1
+ExecStart=/usr/bin/python3 /home/kimstars/git/zigbee-dashboard/app1/mqtt_sender.py
 
 [Install]
 WantedBy=multi-user.target
