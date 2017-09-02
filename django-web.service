@@ -1,0 +1,11 @@
+[Unit]
+Description=ZIGBEE DATA FORWARDER
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/kimstars/zigbee-dashboard
+ExecStart=/usr/bin/python3 /home/kimstars/zigbee-dashboard/manage.py runserver 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
