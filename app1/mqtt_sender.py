@@ -31,7 +31,7 @@ MQTT_PORT = 1883
 MQTT_KEEPALIVE = 60
 MQTT_TOPIC_PREFIX = "/SwitchStatus"
 # MQTT_TOPIC_PREFIX2 = "/iotgateway"
-MQTT_SEND_INTERVAL = 1
+MQTT_SEND_INTERVAL = 6
 myqueue = queue.Queue()##### switchcontrol 数据库通信
 # s1 = ''
 # s2 = ''
@@ -159,8 +159,7 @@ class DeviceAgent(threading.Thread):
             self.copy4 = self.redislist4
             self.redislist4 = {}
                 # print(self.redislist4)
-
-
+            time.sleep(MQTT_SEND_INTERVAL)
 
 
 
