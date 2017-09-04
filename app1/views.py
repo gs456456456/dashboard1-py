@@ -19,7 +19,7 @@ from django.shortcuts import redirect
 import pytz
 from django.http import HttpResponseRedirect
 # Create your views here.
-
+import queue
 
 
 
@@ -136,15 +136,26 @@ class configSunViewset(ReadOnlyModelViewSet):
     serializer_class = configSunSerilzer
 
 def detail(request):
-    a = models.lightStatus.objects.order_by('-now')[:200]
+    myqueue = queue.Queue()
+    a = models.lightStatus.objects.order_by('-now')
+    myqueue.put(a)
     num = 3
     if request.method == 'GET':
         #####line
-        if request.GET.get('st') or request.GET.get('et') or request.GET.get('line') or request.GET.get('status'):
+        if request.GET.get('line'):# or request.GET.get('et') or request.GET.get('line') or request.GET.get('status')
+            # global a
             default_line = request.GET.get('line')
             numlist = re.findall(r'\d+',default_line)
             print(default_line)
             num = int(numlist[0])
+            a = myqueue.get()
+            a = a.filter(status_change=num)
+            print(a)
+            print(myqueue.qsize())
+            myqueue.queue.clear()
+            myqueue.put(a)
+        if request.GET.get('status'):
+            # global a
             ####status
             default_status = request.GET.get('status')
             if default_status == '运行':
@@ -155,20 +166,41 @@ def detail(request):
                 default_status = 3
             elif default_status == '待机':
                 default_status = 2
-
+            a = myqueue.get()
+            a = a.filter(nid=default_status)
+            myqueue.queue.clear()
+            myqueue.put(a)
             ####时间
-            tz = pytz.timezone('Asia/Shanghai')
+        if request.GET.get('st') and not request.GET.get('et'):
+            default_st = request.GET.get('st')
+            d = json.loads(default_st)
+            dtstart = datetime.datetime(year = d['year'],month=d['month'],day=d['date'],hour=d['hours'],minute=d['minutes'],second=d['seconds'])
+            a = myqueue.get()
+            a = a.filter(Q(now__gte =dtstart)).order_by('now')
+            myqueue.queue.clear()
+            myqueue.put(a)
+
+        if request.GET.get('et') and not request.GET.get('st'):
+            default_et = request.GET.get('et')
+            e = json.loads(default_et)
+            dtend = datetime.datetime(year = e['year'],month=e['month'],day=e['date'],hour=e['hours'],minute=e['minutes'],second=e['seconds'])
+            a = myqueue.get()
+            a = a.filter(Q(now__lte=dtend)).order_by('-now')
+            myqueue.queue.clear()
+            myqueue.put(a)
+
+        if request.GET.get('st') and request.GET.get('et'):
             default_st = request.GET.get('st')
             d = json.loads(default_st)
             default_et = request.GET.get('et')
             e = json.loads(default_et)
             dtstart = datetime.datetime(year = d['year'],month=d['month'],day=d['date'],hour=d['hours'],minute=d['minutes'],second=d['seconds'])
             dtend = datetime.datetime(year = e['year'],month=e['month'],day=e['date'],hour=e['hours'],minute=e['minutes'],second=e['seconds'])
-            print(default_status)
-            a = models.lightStatus.objects.filter(Q(now__range=(dtstart,dtend)),Q(nid=default_status),Q(status_change=num)).order_by('-now')
-            return render(request,'detailpage.html',context={'a':a})
-        else:
-            return render(request,'detailpage.html',context={'a':a})
+            a = myqueue.get()
+            a = a.filter(Q(now__range=(dtstart,dtend))).order_by('-now')
+            myqueue.queue.clear()
+            myqueue.put(a)
+        return render(request,'detailpage.html',context={'a':a})
 # def modelsave(modelname):
 #     models.modelname.objects.create(temperature='1111')
 #     return

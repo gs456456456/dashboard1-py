@@ -142,7 +142,6 @@
 
 //回调
         $('#submit').click(function(){
-            if (starttime && endtime && line && status){
 {#                $.ajax({#}
 {#                             type:'POST',#}
 {#                             url:'/detail/',#}
@@ -173,16 +172,12 @@
                 status:status
             },function(data){
                 $('#change').html(data)
-                $('#test2').remove()
-                $('#test1').remove()
-                $('#middle').remove()
+{#                $('#test2').remove()#}
+{#                $('#test1').remove()#}
+{#                $('#middle').remove()#}
                 console.log('success')
 
             })
-                       }
-            else{
-                alert('请输入完整筛选条件!')
-            }
         })
 
 

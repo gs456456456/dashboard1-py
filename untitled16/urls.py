@@ -570,12 +570,12 @@ def test():
 
 def mysch():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(colorcountfx,args=(3,),trigger='interval', seconds=3)
+    scheduler.add_job(colorcountfx,args=(3,),trigger='interval', seconds=7)
     # scheduler.add_job(colorcountfx,args=(4,),trigger='interval', seconds=4)
-    scheduler.add_job(timecountfx,args=(3,),trigger='interval', seconds=3)
-    scheduler.add_job(colorcountfx,args=(10,),trigger='interval', seconds=3)
-    scheduler.add_job(timecountfx,args=(10,),trigger='interval', seconds=3)
-    scheduler.add_job(sender_simulation,trigger='interval', seconds=5)
+    scheduler.add_job(timecountfx,args=(3,),trigger='interval', seconds=7)
+    scheduler.add_job(colorcountfx,args=(10,),trigger='interval', seconds=7)
+    scheduler.add_job(timecountfx,args=(10,),trigger='interval', seconds=7)
+    scheduler.add_job(sender_simulation,trigger='interval', seconds=7)
     scheduler.add_job(switch1_get,trigger='interval', seconds=8)
     scheduler.add_job(switch2_get,trigger='interval', seconds=8)
     scheduler.add_job(switch3_get,trigger='interval', seconds=8)
