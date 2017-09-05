@@ -200,6 +200,9 @@ class sendtomqtt(models.Model):
     s3 = models.CharField(max_length=6)
     s4 = models.CharField(max_length=6)
     now = models.DateTimeField(default=datetime.now)
+
+
+class runningtime(models.Model):
+    time = models.CharField(max_length=30)
+    now = models.DateTimeField(default=datetime.now)
 # Create your models here.
-
-

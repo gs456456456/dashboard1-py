@@ -3,13 +3,14 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 from .models import lightStatus
 from .serializers import lightstatusSerlizer,factoryData,switchControl1Serilzer,switchControl3Serilzer,switchControl2Serilzer,switchControl4Serilzer
 from .serializers import rotorColorCountSerlizer,elecColorCountSerlizer,elecTimeCountSerilzer,rotorTimeCountSerilzer,factoryDataSerlizer
-from .models import lightStatus,rotorColorCount,elecColorCount,elecTimeCount,rotorTimeCount,configtemp,configsun,configwater
+from .models import lightStatus,rotorColorCount,elecColorCount,elecTimeCount,rotorTimeCount,configtemp,configsun,configwater,runningtime
 # from .models import temperatureFac,humidityFac,co2Fac,PMFac,waterpressureFac,sunFac,factoryData
 # from .serializers import temperatureFacSerilzer,humidityFacSerilzer,co2FacSerilzer,waterpressureFacSerilzer,sunFacSerilzer,PMFacSerilzer
 from django.http import HttpResponse
 from .models import pipe,fireProSys,airMach,autoSwitch,waterTower,boiler
 from .serializers import pipesSerlizer,fireProSysSerlizer,airMachSerlizer,autoSwitchSerlizer,waterTowerSerlizer,boilerSerlizer,configSunSerilzer,configWaterSerilzer,configTempSerilzer
 import json
+from .serializers import runningtimeSerilzer
 from datetime import datetime
 from app1 import models
 import datetime
@@ -29,6 +30,10 @@ def testview(request):
 
 def chartview(request):
     return render(request,'chart.html')
+
+class runningtimeViewset(ReadOnlyModelViewSet):
+    queryset = runningtime.objects.order_by('-now')
+    serializer_class = runningtimeSerilzer
 
 class fireProSysViewset(ReadOnlyModelViewSet):
     queryset = fireProSys.objects.order_by('-now')

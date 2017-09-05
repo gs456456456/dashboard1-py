@@ -4,7 +4,7 @@ from .models import rotorColorCount
 from .models import elecColorCount,elecTimeCount,rotorTimeCount,fireProSys,airMach,autoSwitch,pipe,boiler,waterTower
 from .models import factoryData
 # from .models import temperatureFac,humidityFac,sunFac,co2Fac,PMFac,waterpressureFac
-from .models import configwater,configsun,configtemp,switchcontrol1,switchcontrol3,switchcontrol2,switchcontrol4
+from .models import configwater,configsun,configtemp,switchcontrol1,switchcontrol3,switchcontrol2,switchcontrol4,runningtime
 
 
 class fireProSysSerlizer(serializers.ModelSerializer):
@@ -104,7 +104,10 @@ class switchControl4Serilzer(serializers.ModelSerializer):
             model = switchcontrol4
             fields = ('switch4','now')
 
-
+class runningtimeSerilzer(serializers.ModelSerializer):
+        class Meta:
+            model = runningtime
+            fields =('time','now')
 # class temperatureFacSerilzer(serializers.ModelSerializer):
 #        class Meta:
 #             model = temperatureFac

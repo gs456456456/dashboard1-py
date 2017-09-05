@@ -1030,7 +1030,7 @@
 </body>
 <script>
          function mqtt1() {
-             client = new Paho.MQTT.Client("127.0.0.1", Number(9001), "clientId");
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1078,7 +1078,7 @@
              }
          }
          function mqtt2() {
-             client = new Paho.MQTT.Client("127.0.0.1", Number(9001), "clientId");
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1126,7 +1126,7 @@
          }
 
          function mqtt3() {
-             client = new Paho.MQTT.Client("127.0.0.1", Number(9001), "clientId");
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1174,7 +1174,7 @@
          }
 
          function mqtt4() {
-             client = new Paho.MQTT.Client("127.0.0.1", Number(9001), "clientId");
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1357,7 +1357,7 @@
                                      }
                                      else if (linecolor === 3){
                                          document.getElementById('elecstatus').innerHTML='检修中';
-                                         $(jqselector).css('background-color','blue')
+                                         $(jqselector).css('background-color','silver')
                                      }
                                      else if (linecolor === 4){
                                          document.getElementById('elecstatus').innerHTML='运行中';
@@ -1375,7 +1375,7 @@
                                          $(jqselector).css('background-color','yellow')
                                      }
                                      else if(linecolor === 3){
-                                         $(jqselector).css('background-color','blue')
+                                         $(jqselector).css('background-color','')
                                      }
                                      else if(linecolor === 4){
                                          $(jqselector).css('background-color','#3c763d')
@@ -1398,7 +1398,7 @@
                          }
                      }
                  })
-             },5800);
+             },3000);
              //Line3
              getrotorcolorcount = setInterval(function(){
                  $.ajax({
@@ -1423,7 +1423,7 @@
                          }
                      }
                  })
-             },6200);
+             },3000);
              geteleccolorcount = setInterval(function(){
                  $.ajax({
                      type:'GET',
@@ -1445,7 +1445,7 @@
                          }
                      }
                  })
-             },6200);
+             },3000);
              getrotortimecount = setInterval(function(){
                          $.ajax({
                              type:'GET',
@@ -1471,7 +1471,30 @@
                          })
                      }
 
-                     ,6200);
+                     ,3000);
+
+                     runningtimecount = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/runningtime/',
+                             dataType:'json',
+                             success:function(json){
+                                 var runningtime = eval(json);
+                                 console.log(json)
+                                 if(runningtime) {
+                                     var greentime = json.results[0].time;
+                                     document.getElementById('elecgreentime').innerHTML=greentime;
+                                 }
+                                 else
+                                 {
+                                     console.log('runningtimecount failed!')
+                                 }
+                             }
+                         })
+                     }
+
+                     ,3000)
+
 
              getelectimecount = setInterval(function(){
                          $.ajax({
@@ -1488,10 +1511,10 @@
                                      console.log(json)
                                      console.log(typeof(json))
                                      var bluetime = json.results[0].blue;
-                                     var greentime = json.results[0].green;
+                                    //  var greentime = json.results[0].green;
                                      document.getElementById('elecyellowtime').innerHTML=electimecount.results[0].randy;
                                      document.getElementById('elecbluetime').innerHTML=bluetime;
-                                     document.getElementById('elecgreentime').innerHTML=greentime;
+                                    //  document.getElementById('elecgreentime').innerHTML=greentime;
                                  }
                                  else
                                  {
@@ -1501,7 +1524,7 @@
                          })
                      }
 
-                     ,6200)
+                     ,3000)
 
              getboiler = setInterval(function(){
                          $.ajax({
@@ -1660,12 +1683,13 @@
 
                      ,6000)
 
+            
 
-             //自动开关
-             getswitch1 = setInterval(function() {
+            //读取开关当前值
+            getswitch1 = setInterval(function() {
                          $.ajax({
                              type: 'GET',
-                             url: '/switchcontrol1/',
+                             url: '/autoSwitch/',
                              dataType: 'json',
                              success: function (json) {
                                  var switchcontrol1 = eval(json);
@@ -1689,87 +1713,115 @@
                      }
                      ,6500)
 
-             getswitch2 = setInterval(function() {
-                         $.ajax({
-                             type: 'GET',
-                             url: '/switchcontrol2/',
-                             dataType: 'json',
-                             success: function (json) {
-                                 var switchcontrol2 = eval(json);
-                                 if (json.results[0]) {
-                                     var switch2 = json.results[0].switch2;
-                                     if (switch2 === 1) {
-                                         $('#switch2').prop("checked",true)
-                                         $('#arrow2').removeClass('notappear');
-                                         $('#arrow3').removeClass('notappear');
-                                         $('#arrow2').addClass('d');
-                                         $('#arrow3').addClass('e');
-                                     }
-                                     else {
-                                         $('#switch2').prop("checked",false)
-                                         $('#arrow2').addClass('notappear');
-                                         $('#arrow3').addClass('notappear');
-                                         $('#arrow2').removeClass('d');
-                                         $('#arrow3').removeClass('e');
-                                     }
-                                 }
-                             }
-                         })
-                     }
-                     ,6500)
+             //自动开关
+            //  getswitch1 = setInterval(function() {
+            //              $.ajax({
+            //                  type: 'GET',
+            //                  url: '/switchcontrol1/',
+            //                  dataType: 'json',
+            //                  success: function (json) {
+            //                      var switchcontrol1 = eval(json);
+            //                      if (json.results[0]) {
+            //                          var switch1 = json.results[0].switch1;
+            //                          console.log(switch1)
+            //                          console.log(typeof(switch1))
+            //                          if (switch1 === 1) {
+            //                              $('#switch1').prop("checked", true)
+            //                              $('#lighttopleftdiv').removeClass('notappear')
+            //                              $('#lightbottomleftdiv').removeClass('notappear')
+            //                          }
+            //                          else {
+            //                              $('#switch1').prop("checked", false)
+            //                              $('#lighttopleftdiv').addClass('notappear')
+            //                              $('#lightbottomleftdiv').addClass('notappear')
+            //                          }
+            //                      }
+            //                  }
+            //              })
+            //          }
+            //          ,6500)
 
-             getswitch3 = setInterval(function() {
-                         $.ajax({
-                             type: 'GET',
-                             url: '/switchcontrol3/',
-                             dataType: 'json',
-                             success: function (json) {
-                                 var switchcontrol3 = eval(json);
-                                 if (json.results[0]) {
-                                     var switch3 = json.results[0].switch3;
-                                     if (switch3 === 1) {
-                                         $('#switch3').prop("checked",true)
-                                         $('#arrow1').removeClass('notappear');
-                                         $('#arrow4').removeClass('notappear');
-                                         $('#arrow1').addClass('c');
-                                         $('#arrow4').addClass('f');
-                                     }
-                                     else {
-                                         $('#switch3').prop("checked",false)
-                                         $('#arrow1').addClass('notappear');
-                                         $('#arrow4').addClass('notappear');
-                                         $('#arrow1').removeClass('c');
-                                         $('#arrow4').removeClass('f');
-                                     }
-                                 }
-                             }
-                         })
-                     }
-                     ,6500)
+            //  getswitch2 = setInterval(function() {
+            //              $.ajax({
+            //                  type: 'GET',
+            //                  url: '/switchcontrol2/',
+            //                  dataType: 'json',
+            //                  success: function (json) {
+            //                      var switchcontrol2 = eval(json);
+            //                      if (json.results[0]) {
+            //                          var switch2 = json.results[0].switch2;
+            //                          if (switch2 === 1) {
+            //                              $('#switch2').prop("checked",true)
+            //                              $('#arrow2').removeClass('notappear');
+            //                              $('#arrow3').removeClass('notappear');
+            //                              $('#arrow2').addClass('d');
+            //                              $('#arrow3').addClass('e');
+            //                          }
+            //                          else {
+            //                              $('#switch2').prop("checked",false)
+            //                              $('#arrow2').addClass('notappear');
+            //                              $('#arrow3').addClass('notappear');
+            //                              $('#arrow2').removeClass('d');
+            //                              $('#arrow3').removeClass('e');
+            //                          }
+            //                      }
+            //                  }
+            //              })
+            //          }
+            //          ,6500)
+
+            //  getswitch3 = setInterval(function() {
+            //              $.ajax({
+            //                  type: 'GET',
+            //                  url: '/switchcontrol3/',
+            //                  dataType: 'json',
+            //                  success: function (json) {
+            //                      var switchcontrol3 = eval(json);
+            //                      if (json.results[0]) {
+            //                          var switch3 = json.results[0].switch3;
+            //                          if (switch3 === 1) {
+            //                              $('#switch3').prop("checked",true)
+            //                              $('#arrow1').removeClass('notappear');
+            //                              $('#arrow4').removeClass('notappear');
+            //                              $('#arrow1').addClass('c');
+            //                              $('#arrow4').addClass('f');
+            //                          }
+            //                          else {
+            //                              $('#switch3').prop("checked",false)
+            //                              $('#arrow1').addClass('notappear');
+            //                              $('#arrow4').addClass('notappear');
+            //                              $('#arrow1').removeClass('c');
+            //                              $('#arrow4').removeClass('f');
+            //                          }
+            //                      }
+            //                  }
+            //              })
+            //          }
+            //          ,6500)
 
 
-             getswitch4 = setInterval(function() {
-                         $.ajax({
-                             type: 'GET',
-                             url: '/switchcontrol4/',
-                             dataType: 'json',
-                             success: function (json) {
-                                 var switchcontrol4 = eval(json);
-                                 if (json.results[0]) {
-                                     var switch4 = json.results[0].switch4;
-                                     if (switch4 === 1) {
-                                         $('#switch4').prop("checked",true)
-                                         $('.fan').addClass('b');
-                                     }
-                                     else {
-                                         $('#switch4').prop("checked",false)
-                                         $('.fan').removeClass('b');
-                                     }
-                                 }
-                             }
-                         })
-                     }
-                     ,6500)
+            //  getswitch4 = setInterval(function() {
+            //              $.ajax({
+            //                  type: 'GET',
+            //                  url: '/switchcontrol4/',
+            //                  dataType: 'json',
+            //                  success: function (json) {
+            //                      var switchcontrol4 = eval(json);
+            //                      if (json.results[0]) {
+            //                          var switch4 = json.results[0].switch4;
+            //                          if (switch4 === 1) {
+            //                              $('#switch4').prop("checked",true)
+            //                              $('.fan').addClass('b');
+            //                          }
+            //                          else {
+            //                              $('#switch4').prop("checked",false)
+            //                              $('.fan').removeClass('b');
+            //                          }
+            //                      }
+            //                  }
+            //              })
+            //          }
+            //          ,6500)
 
 
                         getswitch = setInterval(function(){
@@ -1779,11 +1831,11 @@
                              dataType:'json',
                              success:function(json){
                                  var autoSwitch = eval(json);
-                                 if(autoSwitch) {
-                                     var s1 = json.results[0].light;
-                                     var s2 = json.results[0].water;
-                                     var s3 = json.results[0].elec;
-                                     var s4 = json.results[0].fan;
+                                 if(autoSwitch.results[0]) {
+                                     var s1 = autoSwitch.results[0].light;
+                                     var s2 = autoSwitch.results[0].water;
+                                     var s3 = autoSwitch.results[0].elec;
+                                     var s4 = autoSwitch.results[0].fan;
                                      if(s1===1){
                                          $('#switch1').attr("checked",true)
                                          $('#lighttopleftdiv').removeClass('notappear')
