@@ -7,8 +7,8 @@ from .models import lightStatus,rotorColorCount,elecColorCount,elecTimeCount,rot
 # from .models import temperatureFac,humidityFac,co2Fac,PMFac,waterpressureFac,sunFac,factoryData
 # from .serializers import temperatureFacSerilzer,humidityFacSerilzer,co2FacSerilzer,waterpressureFacSerilzer,sunFacSerilzer,PMFacSerilzer
 from django.http import HttpResponse
-from .models import pipe,fireProSys,airMach,autoSwitch,waterTower,boiler
-from .serializers import pipesSerlizer,fireProSysSerlizer,airMachSerlizer,autoSwitchSerlizer,waterTowerSerlizer,boilerSerlizer,configSunSerilzer,configWaterSerilzer,configTempSerilzer
+from .models import pipe,fireProSys,airMach,autoSwitch,waterTower,boiler,id6_get
+from .serializers import pipesSerlizer,fireProSysSerlizer,airMachSerlizer,autoSwitchSerlizer,waterTowerSerlizer,boilerSerlizer,configSunSerilzer,configWaterSerilzer,configTempSerilzer,id6_getSerilzer
 import json
 from .serializers import runningtimeSerilzer
 from datetime import datetime
@@ -139,6 +139,11 @@ class configWaterViewset(ReadOnlyModelViewSet):
 class configSunViewset(ReadOnlyModelViewSet):
     queryset = configsun.objects.order_by('-now')
     serializer_class = configSunSerilzer
+
+class id6_getViewset(ReadOnlyModelViewSet):
+    queryset = id6_get.objects.order_by('-now')
+    serializer_class = id6_getSerilzer
+
 
 def detail(request):
     myqueue = queue.Queue()

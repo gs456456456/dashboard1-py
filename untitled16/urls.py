@@ -34,17 +34,13 @@ from app1.models import switchcontrol1 as switch1model
 from app1.models import switchcontrol2 as switch2model
 from app1.models import switchcontrol3 as switch3model
 from app1.models import switchcontrol4 as switch4model
-# from app1.models import temperatureFac as temperaturemodel
-# from app1.models import co2Fac as co2model
-# from app1.models import PMFac as PMmodel
-# from app1.models import waterpressureFac as waterpressuremodel
-# from app1.models import humidityFac as humiditymodel
-# from app1.models import sunFac as sunmodel
 from app1.views import *
+from app1.views import id6_getViewset
 from app1 import mqtt_sender
 import arrow
 import random
 from app1.models import runningtime as runmodel
+
 
 
 def fan(request):
@@ -56,6 +52,10 @@ def fan(request):
     # global green
     return render(request,'mainpage.html')
 
+
+id6_get = id6_getViewset.as_view({
+    'get':'list',
+})
 
 runningtime = runningtimeViewset.as_view({
     'get':'list',
@@ -203,7 +203,8 @@ urlpatterns = format_suffix_patterns([
     url(r'^$',fan),
     url(r'^test/$',test),
     url(r'^detail/$',detail,name='detail'),
-    url(r'changepage/$',changepage,name='changepage')
+    url(r'^changepage/$',changepage,name='changepage'),
+    url(r'^id6_get/$',id6_get,name='id6_get')
     # url(r'switchget/$',mqtt_sender.switchget)
 ])
 
@@ -519,6 +520,19 @@ def switch_depend_list(val):
 #             else:
 #                 models.switchcontrol.objects.create(switch1=2,switch2=2,switch3=2,switch4=2)
 
+
+
+def switch1():
+    pass
+
+def switch2():
+    pass
+
+def switch3():
+    pass
+
+def switch4():
+    pass
 
 
 def lightstatus_create(data):
