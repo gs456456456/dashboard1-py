@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'app1',
+    'dj_pagination',
 ]
 
 #rest settings
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dj_pagination.middleware.PaginationMiddleware',
 ]
 
 ROOT_URLCONF = 'untitled16.urls'
@@ -74,10 +76,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'django.template.context_processors.i18n”',
+                # 'django.template.context_processors.media',
             ],
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'untitled16.wsgi.application'
 
@@ -87,20 +93,20 @@ WSGI_APPLICATION = 'untitled16.wsgi.application'
 
 DATABASES = {
     'default': {
-        ##company
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo1',
-        'USER': 'root',
-        'PASSWORD': 'example',
-        'HOST': '192.168.1.2',
-        'PORT': '3306',
+    #     ##company
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'demo1',
+    #     'USER': 'root',
+    #     'PASSWORD': 'example',
+    #     'HOST': '192.168.1.2',
+    #     'PORT': '3306',
         #mine
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'job1',
-        # 'USER': 'root',
-        # 'PASSWORD': '3113',
-        # 'HOST': '127.0.0.1',
-        # 'PORT': '3306',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'job1',
+        'USER': 'root',
+        'PASSWORD': '3113',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -135,7 +141,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

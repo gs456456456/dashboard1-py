@@ -41,7 +41,9 @@ from app1.models import switchcontrol4 as switch4model
 # from app1.models import humidityFac as humiditymodel
 # from app1.models import sunFac as sunmodel
 from app1.views import *
-
+from app1 import mqtt_sender
+import arrow
+import random
 
 def fan(request):
     # print('1111')
@@ -157,6 +159,9 @@ waterTower = waterTowerViewset.as_view({
     'get':'list',
 })
 
+
+
+
 urlpatterns = format_suffix_patterns([
     url(r'^admin/', admin.site.urls),
     # url(r'^$',views.testview),
@@ -188,7 +193,10 @@ urlpatterns = format_suffix_patterns([
     url(r'^switchcontrol3/$',switchcontrol3,name='switchcontrol3'),
     url(r'^switchcontrol4/$',switchcontrol4,name='switchcontrol4'),
     url(r'^$',fan),
-    url(r'test/$',test),
+    url(r'^test/$',test),
+    url(r'^detail/$',detail,name='detail'),
+    url(r'changepage/$',changepage,name='changepage')
+    # url(r'switchget/$',mqtt_sender.switchget)
 ])
 
 ######加载定时器
@@ -238,9 +246,9 @@ def colorcountfx(n):###总共花的次数
         else:
             print('color wrong!')
     # colormodel.objects.order_by('-now')
-    if n==4:
+    if n==3:
         rotorcolormodel.objects.create(red=red,yellow=yellow,blue=blue,green=green)
-    elif n==3:
+    elif n==10:
         eleccolormodel.objects.create(red=red,yellow=yellow,blue=blue,green=green)
     else:
         print('line is wrong!')
@@ -320,9 +328,9 @@ def timecountfx(n):###总共花的时间
     randytotal = secchange(randytotal_time)
 
     # print(randytotal)
-    if n==4:
+    if n==3:
         rotortimemodel.objects.create(red=redtotal,yellow=yellowtotal,blue=bluetotal,green=greentotal)
-    elif n==3:
+    elif n==10:
         electimemodel.objects.create(red=redtotal,yellow=yellowtotal,blue=bluetotal,green=greentotal,randy=randytotal)
     else:
         print('continus time wrong!')
@@ -360,6 +368,9 @@ def timecountfx(n):###总共花的时间
 
 
 
+
+
+
 def switch_depend_list(val):
     targetlist = []
     a = list(models.factoryData.objects.order_by('-now').values_list(val))
@@ -367,8 +378,10 @@ def switch_depend_list(val):
     target = targetlist[0]
     return target
 
+copy_sun = 0
 
 def switch1_get():
+    global copy_sun
     sun_list_open=[]
     sun_list_close=[]
     sun_switch_open = list(models.configsun.objects.order_by('-now').values_list('sunmin'))
@@ -376,14 +389,21 @@ def switch1_get():
     if sun_switch_open and sun_switch_close:
         append_list(sun_switch_open,sun_list_open)
         sun_min = sun_list_open[0]
-        targetsun = switch_depend_list('sun')
-        if float(targetsun)<sun_min:
-            models.switchcontrol1.objects.create(switch1=1)
-        else:
-            models.switchcontrol1.objects.create(switch1=2)
+        targetsun = switch_depend_list('sun')###factory
+        if copy_sun!= sun_min:
+            if float(targetsun)<sun_min:
+                models.switchcontrol1.objects.create(switch1=1)
+                copy_sun = sun_list_open[0]
+            else:
+                models.switchcontrol1.objects.create(switch1=2)
+                copy_sun = sun_list_open[0]
 
 
+copy_switch = 0 ##缓存
+
+#######存取变化量
 def switch2_get():
+    global copy_switch
     water_list_open=[]
     water_list_close=[]
     water_switch_open = list(models.configwater.objects.order_by('-now').values_list('waterpressuremin'))
@@ -392,12 +412,18 @@ def switch2_get():
         append_list(water_switch_open,water_list_open)
         water_min = water_list_open[0]
         targetwater = switch_depend_list('waterpressure')
-        if float(targetwater)<water_min:
-            models.switchcontrol2.objects.create(switch2=1)
-        else:
-            models.switchcontrol2.objects.create(switch2=2)
+        if copy_switch != water_min:
+            if float(targetwater)<water_min:
+                models.switchcontrol2.objects.create(switch2=1)
+                copy_switch = water_list_open[0]
+            else:
+                models.switchcontrol2.objects.create(switch2=2)
+                copy_switch = water_list_open[0]
+
+copy_elec = 0
 
 def switch3_get():
+    global copy_elec
     elec_list_open=[]
     elec_list_close=[]
     elec_switch_close = list(models.configwater.objects.order_by('-now').values_list('waterpressuremin'))
@@ -406,12 +432,19 @@ def switch3_get():
         append_list(elec_switch_open,elec_list_open)
         elec_max = elec_list_open[0]
         targetwater = switch_depend_list('waterpressure')
-        if float(targetwater)>elec_max:
-            models.switchcontrol3.objects.create(switch3=1)
-        else:
-            models.switchcontrol3.objects.create(switch3=2)
+        if copy_elec != elec_max:
+            if float(targetwater)>elec_max:
+                models.switchcontrol3.objects.create(switch3=1)
+                copy_elec = elec_list_open[0]
+            else:
+                models.switchcontrol3.objects.create(switch3=2)
+                copy_elec = elec_list_open[0]
+
+
+copy_fan = 0
 
 def switch4_get():
+    global copy_fan
     fan_list_open=[]
     fan_list_close=[]
     fan_switch_open = list(models.configtemp.objects.order_by('-now').values_list('temperaturemax'))
@@ -420,11 +453,13 @@ def switch4_get():
         append_list(fan_switch_open,fan_list_open)
         temp_min = fan_list_open[0]
         targetfan = switch_depend_list('temperature')
-        if float(targetfan)<temp_min:
-            models.switchcontrol4.objects.create(switch4=1)
-        else:
-            models.switchcontrol4.objects.create(switch4=2)
-
+        if copy_fan != temp_min:
+            if float(targetfan)<temp_min:
+                models.switchcontrol4.objects.create(switch4=1)
+                copy_fan = fan_list_open[0]
+            else:
+                models.switchcontrol4.objects.create(switch4=2)
+                copy_fan = fan_list_open[0]
 
 # def switch_judge(sun_min,sun_max,fan_max,fan_min,water_min,elec_max):
 #     targetsun = switch_depend_list('sun')
@@ -478,6 +513,55 @@ def switch4_get():
 
 
 
+def lightstatus_create(data):
+    models.lightStatus.objects.create(nid=data['m'],status_change=data['s'],now=data['ts'])
+
+# def deviceswitch_create(self,data):
+#     models.autoSwitch.objects.create(light=data['sw1'],water=data['sw2'],elec=data['sw3'],fan=data['sw4'])
+
+def watertower_create(data):
+    models.waterTower.objects.create(height=data['wthe'],ph=data['wtph'],flow=data['wtfl'])
+
+def air_create(data):
+    models.airMach.objects.create(airpressure=data['airp'])
+
+def pipe_create(data):
+    models.pipe.objects.create(speed=data['winds'],pressure=data['windp'])
+
+def boiler_create(data):
+    models.boiler.objects.create(temperature=data['boilt'],airpressure=data['boilp'],waterpressure=data['boilwp'],elec=data['boile'])
+
+def firepro_create(data):
+    models.fireProSys.objects.create(waterpressure=data['pipewp'])
+
+def random_save(data):
+    # self.deviceswitch_create(data)
+    watertower_create(data)
+    air_create(data)
+    boiler_create(data)
+    firepro_create(data)
+    pipe_create(data)
+
+def sender_simulation():
+    payload = {}
+    # tagName = 'SwitchStatus'
+    # topic = MQTT_TOPIC_PREFIX + "/"
+    utc = arrow.utcnow()
+    time = payload['ts'] = utc.format('YYYY-MM-DDTHH:mm:ss.SSSSSS') + "Z"#时间戳
+    watertowerph = payload['wtph']=random.choice([3,6,9])
+    # watertowerheight = payload['wthe']=random.randint(0,10)
+    watertowerheight = payload['wthe']=random.choice([0.002,0.001,-0.003])
+    watertowerflow= payload['wtfl']=random.choice([4,6,9])
+    airpressure = payload['airp'] = random.randint(1000,2000)
+    windspeed = payload['winds']=random.randint(10,20)
+    windpressure = payload['windp']=random.randint(20,30)
+    boilerpressure = payload['boilp']=random.randint(20,30)
+    boilertemp = payload['boilt']=random.randint(20,30)
+    boilerwaterpressure = payload['boilwp']=random.randint(1000,2000)
+    boilerelec = payload['boile']=random.randint(30,40)
+    pipewaterpressure = payload['pipewp']=random.randint(300,500)
+    random_save(payload)
+
 def test():
     switch1_get()
     switch2_get()
@@ -486,13 +570,16 @@ def test():
 
 def mysch():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(colorcountfx,args=(3,),trigger='interval', seconds=4)
+    scheduler.add_job(colorcountfx,args=(3,),trigger='interval', seconds=3)
     # scheduler.add_job(colorcountfx,args=(4,),trigger='interval', seconds=4)
-    scheduler.add_job(timecountfx,args=(3,),trigger='interval', seconds=4)
-    scheduler.add_job(switch1_get,trigger='interval', seconds=10)
-    scheduler.add_job(switch2_get,trigger='interval', seconds=10)
-    scheduler.add_job(switch3_get,trigger='interval', seconds=10)
-    scheduler.add_job(switch4_get,trigger='interval', seconds=10)
+    scheduler.add_job(timecountfx,args=(3,),trigger='interval', seconds=3)
+    scheduler.add_job(colorcountfx,args=(10,),trigger='interval', seconds=3)
+    scheduler.add_job(timecountfx,args=(10,),trigger='interval', seconds=3)
+    scheduler.add_job(sender_simulation,trigger='interval', seconds=5)
+    scheduler.add_job(switch1_get,trigger='interval', seconds=8)
+    scheduler.add_job(switch2_get,trigger='interval', seconds=8)
+    scheduler.add_job(switch3_get,trigger='interval', seconds=8)
+    scheduler.add_job(switch4_get,trigger='interval', seconds=8)
     # scheduler.add_job(timecountfx,args=(4,),trigger='interval', seconds=4)#间隔5秒钟执行一次
 
     scheduler.start()    #这里的调度任务是独立的一个线程
