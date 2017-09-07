@@ -201,8 +201,22 @@ class sendtomqtt(models.Model):
     s4 = models.CharField(max_length=6)
     now = models.DateTimeField(default=datetime.now)
 
+class switchget(models.Model):
+    pass
+
 
 class runningtime(models.Model):
     time = models.CharField(max_length=30)
     now = models.DateTimeField(default=datetime.now)
+
+
+###从id6读入数据
+class id6_get(models.Model):
+    s1 = models.CharField(max_length=6)
+    s2 = models.CharField(max_length=6)
+    s3 = models.CharField(max_length=6)
+    s4 = models.CharField(max_length=6)
+    now = models.DateTimeField(default=datetime.now)
+
+
 # Create your models here.

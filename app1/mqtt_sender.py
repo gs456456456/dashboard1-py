@@ -428,6 +428,33 @@ class DeviceAgent(threading.Thread):
         if status:
             models.lightStatus.objects.create(nid = 3,status_change=10)
 
+    def switch1_save(self,jsonObject):
+        s1 = jsonObject['v']
+        if s1:
+            models.switchcontrol1.objects.create(switch1=1)
+        else:
+            models.switchcontrol1.objects.create(switch1=2)
+
+    def switch2_save(self,jsonObject):
+        s2 = jsonObject['v']
+        if s2:
+            models.switchcontrol2.objects.create(switch2=1)
+        else:
+            models.switchcontrol2.objects.create(switch2=2)
+
+    def switch3_save(self,jsonObject):
+        s3 = jsonObject['v']
+        if s3:
+            models.switchcontrol3.objects.create(switch3=1)
+        else:
+            models.switchcontrol3.objects.create(switch3=2)
+
+    def switch4_save(self,jsonObject):
+        s4 = jsonObject['v']
+        if s4:
+            models.switchcontrol4.objects.create(switch4=1)
+        else:
+            models.switchcontrol4.objects.create(switch4=2)
 
     def running_save(self,jsonObject):
         # time = jsonObject['values'][0]['v']
@@ -504,6 +531,14 @@ class DeviceAgent(threading.Thread):
                 self.lightmysql_save2(jsonObject)
             elif "id5/ch4" in t:
                 self.lightmysql_save4(jsonObject)
+            elif "id6/ch1" in t:
+                self.switch1_save(jsonObject)
+            elif "id6/ch2" in t:
+                self.switch2_save(jsonObject)
+            elif "id6/ch3" in t:
+                self.switch3_save(jsonObject)
+            elif "id6/ch4" in t:
+                self.switch4_save(jsonObject)
             elif "iotgateway" in t:
                 for value in jsonObject['values']:
                     if not value['q']:
