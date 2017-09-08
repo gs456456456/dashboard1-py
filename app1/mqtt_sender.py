@@ -258,11 +258,11 @@ class DeviceAgent(threading.Thread):
         factory_now = {property_name:get_list[tar_length-1]}
         self.factorycache.update(factory_now)
         # print(self.factorycache)
-        if len(self.factorycache)<3:
+        if len(self.factorycache)<6:
             pass
-        elif len(self.factorycache)==3:
-            # models.factoryData.objects.create(temperature=self.factorycache['temp'],humidity=self.factorycache['humi'],sun=self.factorycache['sun'],co2=self.factorycache['co2'],PM=self.factorycache['pm'],waterpressure=self.factorycache['waterpressure'])
-            models.factoryData.objects.create(temperature=0,humidity=0,sun=0,co2=self.factorycache['co2'],PM=self.factorycache['pm'],waterpressure=self.factorycache['waterpressure'])
+        elif len(self.factorycache)==6:
+            models.factoryData.objects.create(temperature=self.factorycache['temp'],humidity=self.factorycache['humi'],sun=self.factorycache['sun'],co2=self.factorycache['co2'],PM=self.factorycache['pm'],waterpressure=self.factorycache['waterpressure'])
+            # models.factoryData.objects.create(temperature=0,humidity=0,sun=0,co2=self.factorycache['co2'],PM=self.factorycache['pm'],waterpressure=self.factorycache['waterpressure'])
             self.factorycache.clear()
         else:
             print('工厂数据错误!')
