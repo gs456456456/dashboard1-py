@@ -2,85 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="993b6813-66e5-4f8d-9ad3-c6bbcd04cac0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/laydate/laydate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/laydate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.az.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.bn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ee.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pt-BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.rs-latin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.rs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ua.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.zh-TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/moment-with-locales.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app1/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app1/migrations/0002_auto_20170823_1637.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app1/migrations/0003_auto_20170823_1640.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app1/migrations/0004_auto_20170824_0919.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app1/migrations/0005_auto_20170824_1031.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app1/migrations/0006_auto_20170824_1312.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/aaaaa.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fan.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/four.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/layout.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/layout.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/newlayout1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/yellow.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-mqtt.service" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-web.service" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app1/._.DS_Store" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._.DS_Store" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._aaaaa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._arrow2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._arrow2.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._arrow3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._arrow4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._arrow4.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._changelayout.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._elecfa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._fan.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._four.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._jquery-3.2.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._layout.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._layout.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._light.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._light3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._light3appear.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._light3reverse.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._myfan3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._newlayout1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._smalllight.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._waterbump.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/._yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/._.DS_Store" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.eot" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.ttf" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.woff" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zigbee-dashboard" afterPath="$PROJECT_DIR$/zigbee-dashboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app1/models.py" afterPath="$PROJECT_DIR$/app1/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app1/mqtt_getter.py" afterPath="$PROJECT_DIR$/app1/mqtt_getter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app1/mqtt_sender.py" afterPath="$PROJECT_DIR$/app1/mqtt_sender.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app1/mytest.py" afterPath="$PROJECT_DIR$/app1/mytest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app1/serializers.py" afterPath="$PROJECT_DIR$/app1/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app1/views.py" afterPath="$PROJECT_DIR$/app1/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.css" afterPath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.js" afterPath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/laydate/laydate.js" afterPath="$PROJECT_DIR$/static/js/laydate/laydate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.svg" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/font/iconfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/laydate/theme/default/laydate.css" afterPath="$PROJECT_DIR$/static/js/laydate/theme/default/laydate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ar.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.az.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.az.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.bg.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.bg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.bn.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.bn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ca.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.cs.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.cs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.da.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.da.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.de.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ee.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.el.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.el.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.es.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.fi.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.fi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.fr.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.he.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hr.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hu.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hy.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.hy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.id.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.id.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.is.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.is.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.it.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ja.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ja.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ka.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ka.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ko.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ko.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.lt.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.lt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.lv.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.lv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ms.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ms.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.nb.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.nb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.nl.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.no.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.no.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pl.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pt-BR.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pt-BR.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pt.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.pt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ro.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.rs-latin.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.rs-latin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.rs.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.rs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ru.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sk.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sl.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sv.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sw.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.sw.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.th.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.th.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.tr.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ua.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.ua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.uk.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.uk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.zh-CN.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.zh-CN.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.zh-TW.js" afterPath="$PROJECT_DIR$/static/js/locales/bootstrap-datetimepicker.zh-TW.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/less/datetimepicker.less" afterPath="$PROJECT_DIR$/static/less/datetimepicker.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mainpage.html" afterPath="$PROJECT_DIR$/templates/mainpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/pagination/mainpage3.html" afterPath="$PROJECT_DIR$/templates/pagination/mainpage3.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled16/settings.py" afterPath="$PROJECT_DIR$/untitled16/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled16/urls.py" afterPath="$PROJECT_DIR$/untitled16/urls.py" />
     </list>
@@ -99,7 +117,7 @@
     <SUITE FILE_PATH="coverage/zigbee-dashboard$mytags.coverage" NAME="mytags Coverage Results" MODIFIED="1504148046510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app1/templatetags" />
     <SUITE FILE_PATH="coverage/zigbee-dashboard$mqtt_sender.coverage" NAME="mqtt_sender Coverage Results" MODIFIED="1504244781339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app1" />
     <SUITE FILE_PATH="coverage/zigbee-dashboard$mytest.coverage" NAME="mytest Coverage Results" MODIFIED="1504144591266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app1" />
-    <SUITE FILE_PATH="coverage/zigbee-dashboard$mqtt_sender__1_.coverage" NAME="mqtt_sender (1) Coverage Results" MODIFIED="1504663250994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zigbee-dashboard/app1" />
+    <SUITE FILE_PATH="coverage/zigbee-dashboard$mqtt_sender__1_.coverage" NAME="mqtt_sender (1) Coverage Results" MODIFIED="1505106133144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zigbee-dashboard/app1" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -113,18 +131,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mqtt_sender.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_sender.py">
+      <file leaf-file-name="detailpage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/detailpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-61.0">
-              <caret line="534" column="45" selection-start-line="534" selection-start-column="45" selection-end-line="534" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="185" column="33" selection-start-line="185" selection-start-column="33" selection-end-line="185" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timedelta test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/timedelta test.py">
+      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/manage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -133,43 +151,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/untitled16/urls.py">
+      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/untitled16/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-198.25926">
-              <caret line="524" column="0" selection-start-line="524" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainpage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/mainpage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.06097561">
+              <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="192" column="63" selection-start-line="192" selection-start-column="63" selection-end-line="192" selection-end-column="63" />
               <folding>
-                <element signature="e#644#676#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="django-mqtt.service" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/django-mqtt.service">
+      <file leaf-file-name="mqtt_getter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_getter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="django-web.service" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/django-web.service">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainpage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/mainpage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5833333">
-              <caret line="1741" column="25" selection-start-line="1741" selection-start-column="25" selection-end-line="1741" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -179,44 +207,28 @@
         <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="182" column="9" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="178" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/serializers.py">
+      <file leaf-file-name="_pydev_execfile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/views.py">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zigbee-dashboard/untitled16/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="14.444445">
-              <caret line="142" column="6" selection-start-line="142" selection-start-column="6" selection-end-line="142" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -259,14 +271,14 @@
         <option value="$PROJECT_DIR$/templates/mainpage.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app1/views.py" />
-        <option value="$PROJECT_DIR$/templates/detailpage.html" />
-        <option value="$PROJECT_DIR$/zigbee-dashboard/templates/detailpage.html" />
         <option value="$PROJECT_DIR$/zigbee-dashboard/app1/models.py" />
         <option value="$PROJECT_DIR$/zigbee-dashboard/app1/serializers.py" />
         <option value="$PROJECT_DIR$/zigbee-dashboard/app1/views.py" />
         <option value="$PROJECT_DIR$/zigbee-dashboard/untitled16/urls.py" />
-        <option value="$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_sender.py" />
         <option value="$PROJECT_DIR$/zigbee-dashboard/templates/mainpage.html" />
+        <option value="$PROJECT_DIR$/zigbee-dashboard/templates/detailpage.html" />
+        <option value="$PROJECT_DIR$/templates/detailpage.html" />
+        <option value="$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_sender.py" />
       </list>
     </option>
   </component>
@@ -276,10 +288,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-15" />
-    <option name="y" value="59" />
-    <option name="width" value="1921" />
-    <option name="height" value="998" />
+    <option name="x" value="121" />
+    <option name="y" value="55" />
+    <option name="width" value="957" />
+    <option name="height" value="659" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -324,78 +336,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled16" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zigbee-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -779,27 +723,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-15" y="59" width="1921" height="998" extended-state="0" />
+    <frame x="121" y="55" width="957" height="659" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21713677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5289618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41721854" sideWeight="0.56625867" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4744268" sideWeight="0.29836065" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.4981373" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32794458" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23068433" sideWeight="0.45609367" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41721854" sideWeight="0.43374136" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4744268" sideWeight="0.70163935" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42178217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23068433" sideWeight="0.45609367" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.4981373" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.079744816" sideWeight="0.4974729" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -820,48 +764,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/htmltest2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app1/templatetags/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14640884">
-          <caret line="519" column="15" selection-start-line="519" selection-start-column="15" selection-end-line="519" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/datetime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.063535914">
-          <caret line="1359" column="6" selection-start-line="1359" selection-start-column="6" selection-end-line="1359" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app1/permission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app1/templatetags/mytags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/untitled16/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1006,16 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/untitled16/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="331" column="23" selection-start-line="331" selection-start-column="23" selection-end-line="331" selection-end-column="23" />
-          <folding>
-            <element signature="e#644#676#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pagination/mainpage3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1041,15 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="141" column="32" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mainpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1531" column="24" selection-start-line="1531" selection-start-column="24" selection-end-line="1531" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,9 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="206" column="64" selection-start-line="141" selection-start-column="0" selection-end-line="206" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1067,23 +947,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/detailpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.0">
-          <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_getter.py">
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/untitled16/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="524" column="0" selection-start-line="524" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/django-mqtt.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/django-web.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/mqttserve.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1091,16 +989,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/untitled16/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/timedelta test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/htmltest2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/detailpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mainpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1186" column="12" selection-start-line="1186" selection-start-column="12" selection-end-line="1186" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled16/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="174" column="20" selection-start-line="174" selection-start-column="20" selection-end-line="174" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_sender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="709" column="0" selection-start-line="709" selection-start-column="0" selection-end-line="709" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1113,7 +1065,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/tests.py">
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1121,15 +1073,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_sender.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-61.0">
-          <caret line="534" column="45" selection-start-line="534" selection-start-column="45" selection-end-line="534" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/timedelta test.py">
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/untitled16/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1137,20 +1081,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/views.py">
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/mqtt_getter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.444445">
-          <caret line="142" column="6" selection-start-line="142" selection-start-column="6" selection-end-line="142" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/mainpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5833333">
-          <caret line="1741" column="25" selection-start-line="1741" selection-start-column="25" selection-end-line="1741" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1158,45 +1092,33 @@
     <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="182" column="9" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/untitled16/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-198.25926">
-          <caret line="524" column="0" selection-start-line="524" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
-          <folding>
-            <element signature="e#644#676#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/django-mqtt.service">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="178" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/django-web.service">
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/app1/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="192" column="63" selection-start-line="192" selection-start-column="63" selection-end-line="192" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/detailpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="185" column="33" selection-start-line="185" selection-start-column="33" selection-end-line="185" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zigbee-dashboard/templates/mainpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06097561">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
           <folding />
         </state>
       </provider>

@@ -1030,7 +1030,11 @@
 </body>
 <script>
          function mqtt1() {
+<<<<<<< HEAD
              client = new Paho.MQTT.Client("192.168.1.2", Number(9001), "clientId");
+=======
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1078,7 +1082,11 @@
              }
          }
          function mqtt2() {
+<<<<<<< HEAD
              client = new Paho.MQTT.Client("192.168.1.2", Number(9001), "clientId");
+=======
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1126,7 +1134,11 @@
          }
 
          function mqtt3() {
+<<<<<<< HEAD
              client = new Paho.MQTT.Client("192.168.1.2", Number(9001), "clientId");
+=======
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1174,7 +1186,11 @@
          }
 
          function mqtt4() {
+<<<<<<< HEAD
              client = new Paho.MQTT.Client("192.168.1.2", Number(9001), "clientId");
+=======
+             client = new Paho.MQTT.Client("192.168.62.99", Number(9001), "clientId");
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
              // set callback handlers
              client.onConnectionLost = onConnectionLost;
@@ -1357,7 +1373,11 @@
                                      }
                                      else if (linecolor === 3){
                                          document.getElementById('elecstatus').innerHTML='检修中';
+<<<<<<< HEAD
                                          $(jqselector).css('background-color','blue')
+=======
+                                         $(jqselector).css('background-color','silver')
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
                                      }
                                      else if (linecolor === 4){
                                          document.getElementById('elecstatus').innerHTML='运行中';
@@ -1375,7 +1395,11 @@
                                          $(jqselector).css('background-color','yellow')
                                      }
                                      else if(linecolor === 3){
+<<<<<<< HEAD
                                          $(jqselector).css('background-color','blue')
+=======
+                                         $(jqselector).css('background-color','')
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
                                      }
                                      else if(linecolor === 4){
                                          $(jqselector).css('background-color','#3c763d')
@@ -1398,7 +1422,11 @@
                          }
                      }
                  })
+<<<<<<< HEAD
              },4200);
+=======
+             },3000);
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
              //Line3
              getrotorcolorcount = setInterval(function(){
                  $.ajax({
@@ -1423,7 +1451,11 @@
                          }
                      }
                  })
+<<<<<<< HEAD
              },4900);
+=======
+             },3000);
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
              geteleccolorcount = setInterval(function(){
                  $.ajax({
                      type:'GET',
@@ -1445,7 +1477,11 @@
                          }
                      }
                  })
+<<<<<<< HEAD
              },4900);
+=======
+             },3000);
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
              getrotortimecount = setInterval(function(){
                          $.ajax({
                              type:'GET',
@@ -1470,6 +1506,7 @@
                              }
                          })
                      }
+<<<<<<< HEAD
 
                      ,4900);
 
@@ -1568,6 +1605,80 @@
                                      var pressure = json.results[0].pressure;
                                      document.getElementById('d1').innerHTML=speed+' m/s' ;
                                      document.getElementById('d2').innerHTML=pressure+' MPa';
+=======
+
+                     ,3000);
+
+                     runningtimecount = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/runningtime/',
+                             dataType:'json',
+                             success:function(json){
+                                 var runningtime = eval(json);
+                                 console.log(json)
+                                 if(runningtime) {
+                                     var greentime = json.results[0].time;
+                                     document.getElementById('elecgreentime').innerHTML=greentime;
+                                 }
+                                 else
+                                 {
+                                     console.log('runningtimecount failed!')
+                                 }
+                             }
+                         })
+                     }
+
+                     ,3000)
+
+
+             getelectimecount = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/electimecount/',
+                             dataType:'json',
+                             success:function(json){
+                                 var electimecount = eval(json);
+                                 console.log(json)
+                                 if(electimecount) {
+
+                                                         var redtime = json.results[0].red;
+                                                         var yellowtime = json.results[0].yellow;
+                                     console.log(json)
+                                     console.log(typeof(json))
+                                     var bluetime = json.results[0].blue;
+                                    //  var greentime = json.results[0].green;
+                                     document.getElementById('elecyellowtime').innerHTML=electimecount.results[0].randy;
+                                     document.getElementById('elecbluetime').innerHTML=bluetime;
+                                    //  document.getElementById('elecgreentime').innerHTML=greentime;
+                                 }
+                                 else
+                                 {
+                                     console.log('rotortimecount failed!')
+                                 }
+                             }
+                         })
+                     }
+
+                     ,3000)
+
+             getboiler = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/boiler/',
+                             dataType:'json',
+                             success:function(json){
+                                 var boiler = eval(json);
+                                 if(boiler) {
+                                     var temperature = json.results[0].temperature;
+                                     var airpressure = json.results[0].airpressure;
+                                     var waterpressure= json.results[0].waterpressure;
+                                     var elec= json.results[0].elec;
+                                     document.getElementById('e1').innerHTML=temperature+' °C';
+                                     document.getElementById('e2').innerHTML=airpressure+' MPa';
+                                     document.getElementById('e3').innerHTML=waterpressure+' MPa';
+                                     document.getElementById('e4').innerHTML=elec+' kw';
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
                                  }
                                  else
@@ -1578,6 +1689,7 @@
                          })
                      }
 
+<<<<<<< HEAD
                      ,4700)
 
 
@@ -1609,6 +1721,9 @@
                              }
                          })
                      }
+=======
+                     ,6000)
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
                      ,4700)
 
@@ -1623,6 +1738,7 @@
                                      var waterpressure = json.results[0].waterpressure+' MPa';
                                      document.getElementById('f1').innerHTML=waterpressure;
 
+<<<<<<< HEAD
                                  }
                                  else
                                  {
@@ -1657,6 +1773,29 @@
                              }
                          })
                      }
+=======
+             getairMach = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/airMach/',
+                             dataType:'json',
+                             success:function(json){
+                                 var airMach = eval(json);
+                                 if(airMach) {
+                                     var airpressure = json.results[0].airpressure;
+                                     document.getElementById('c1').innerHTML=airpressure+' MPa';
+
+                                 }
+                                 else
+                                 {
+                                     console.log('airMach failed!')
+                                 }
+                             }
+                         })
+                     }
+
+                     ,6000)
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
                      ,4700)
 
@@ -1840,11 +1979,357 @@
                          })
                      }
 
+<<<<<<< HEAD
                      ,7000)
+=======
+             getpipe = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/pipe/',
+                             dataType:'json',
+                             success:function(json){
+                                 var pipe = eval(json);
+                                 if(pipe) {
+                                     var speed = json.results[0].speed;
+                                     var pressure = json.results[0].pressure;
+                                     document.getElementById('d1').innerHTML=speed+' m/s' ;
+                                     document.getElementById('d2').innerHTML=pressure+' MPa';
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
+
+                                 }
+                                 else
+                                 {
+                                     console.log('boiler failed!')
+                                 }
+                             }
+                         })
+                     }
+
+                     ,6000)
+
+
+             getfactorydata = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/factorydata/',
+                             dataType:'json',
+                             success:function(json){
+                                 var factorydata = eval(json);
+                                 if(factorydata) {
+                                     var temperature= json.results[0].temperature;
+                                     var humidity = json.results[0].humidity;
+                                     var sun = json.results[0].sun;
+                                     var co2 = json.results[0].co2;
+                                     var PM  = json.results[0].PM ;
+                                     var waterpressure = json.results[0].waterpressure;
+                                     document.getElementById('a1').innerHTML=temperature+' °C';
+                                     document.getElementById('a2').innerHTML=humidity+' %RH';
+                                     document.getElementById('a3').innerHTML=sun+' Lux';
+                                     document.getElementById('a4').innerHTML=co2+' ppm';
+                                     document.getElementById('a5').innerHTML=PM+' 千粒/升';
+                                     document.getElementById('a6').innerHTML=waterpressure+' MPa';
+                                 }
+                                 else
+                                 {
+                                     console.log('boiler failed!')
+                                 }
+                             }
+                         })
+                     }
+
+                     ,6000)
+
+<<<<<<< HEAD
+     });
+=======
+             getfireProSys = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/fireProSys/',
+                             dataType:'json',
+                             success:function(json){
+                                 var fireProSys = eval(json);
+                                 if(fireProSys) {
+                                     var waterpressure = json.results[0].waterpressure+' MPa';
+                                     document.getElementById('f1').innerHTML=waterpressure;
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
+
+                                 }
+                                 else
+                                 {
+                                     console.log('boiler failed!')
+                                 }
+                             }
+                         })
+                     }
+
+                     ,6000)
+
+             getwaterTower = setInterval(function(){
+                         $.ajax({
+                             type:'GET',
+                             url:'/waterTower/',
+                             dataType:'json',
+                             success:function(json){
+                                 var waterTower= eval(json);
+                                 if(waterTower) {
+                                     var height = json.results[0].height;
+                                     var ph = json.results[0].ph;
+                                     var flow = json.results[0].flow;
+                                     document.getElementById('b1').innerHTML=height+' MPa';
+                                     document.getElementById('b2').innerHTML=ph;
+                                     document.getElementById('b3').innerHTML=flow+' L/MIN';
+
+                                 }
+                                 else
+                                 {
+                                     console.log('boiler failed!')
+                                 }
+                             }
+                         })
+                     }
+
+<<<<<<< HEAD
+//////不需要
+
+/// 经过数据库传
+{#                      nowswitchstatus  = setInterval(function(){#}
+{#                          var url = '/switchget/';#}
+{#                          var s1 = $('#switch1').prop("checked");#}
+{#                          var s2 = $('#switch2').prop("checked");#}
+{#                          var s3 = $('#switch3').prop("checked");#}
+{#                          var s4 = $('#switch4').prop("checked");#}
+{#                          console.log(s1)#}
+{#                          var sendData = {#}
+{#                              s1 : s1,#}
+{#                              s2 : s2,#}
+{#                              s3 : s3,#}
+{#                              s4 : s4#}
+{#                          }#}
+{#                           $.post(url,sendData,function(backDate){#}
+{#                             $("span").text(backDate);#}
+{#                     });#}
+{#                      },1000)#}
+=======
+                     ,6000)
+
+            
+
+            //读取开关当前值
+{#            getswitch = setInterval(function() {#}
+{#                         $.ajax({#}
+{#                             type: 'GET',#}
+{#                             url: '/autoSwitch/',#}
+{#                             dataType: 'json',#}
+{#                             success: function (json) {#}
+{#                                 var switchcontrol1 = eval(json);#}
+{#                                 if (json.results[0]) {#}
+{#                                     var switch1 = json.results[0].switch1;#}
+{#                                     console.log(switch1)#}
+{#                                     console.log(typeof(switch1))#}
+{#                                     if (switch1 === 1) {#}
+{#                                         $('#switch1').prop("checked", true)#}
+{#                                         $('#lighttopleftdiv').removeClass('notappear')#}
+{#                                         $('#lightbottomleftdiv').removeClass('notappear')#}
+{#                                     }#}
+{#                                     else {#}
+{#                                         $('#switch1').prop("checked", false)#}
+{#                                         $('#lighttopleftdiv').addClass('notappear')#}
+{#                                         $('#lightbottomleftdiv').addClass('notappear')#}
+{#                                     }#}
+{#                                 }#}
+{#                             }#}
+{#                         })#}
+{#                     }#}
+{#                     ,6500)#}
+
+             //后台手动开关
+              getswitch1 = setInterval(function() {
+                          $.ajax({
+                              type: 'GET',
+                              url: '/switchcontrol1/',
+                              dataType: 'json',
+                              success: function (json) {
+                                  var switchcontrol1 = eval(json);
+                                  if (json.results[0]) {
+                                      var switch1 = json.results[0].switch1;
+                                      console.log(switch1)
+                                      console.log(typeof(switch1))
+                                      if (switch1 === 1) {
+                                          $('#switch1').prop("checked", true)
+                                          $('#lighttopleftdiv').removeClass('notappear')
+                                          $('#lightbottomleftdiv').removeClass('notappear')
+                                      }
+                                      else {
+                                          $('#switch1').prop("checked", false)
+                                          $('#lighttopleftdiv').addClass('notappear')
+                                          $('#lightbottomleftdiv').addClass('notappear')
+                                      }
+                                  }
+                              }
+                          })
+                      }
+                      ,6000)
+
+              getswitch2 = setInterval(function() {
+                          $.ajax({
+                              type: 'GET',
+                              url: '/switchcontrol2/',
+                              dataType: 'json',
+                              success: function (json) {
+                                  var switchcontrol2 = eval(json);
+                                  if (json.results[0]) {
+                                      var switch2 = json.results[0].switch2;
+                                      if (switch2 === 1) {
+                                          $('#switch2').prop("checked",true)
+                                          $('#arrow2').removeClass('notappear');
+                                          $('#arrow3').removeClass('notappear');
+                                          $('#arrow2').addClass('d');
+                                          $('#arrow3').addClass('e');
+                                      }
+                                      else {
+                                          $('#switch2').prop("checked",false)
+                                          $('#arrow2').addClass('notappear');
+                                          $('#arrow3').addClass('notappear');
+                                          $('#arrow2').removeClass('d');
+                                          $('#arrow3').removeClass('e');
+                                      }
+                                  }
+                              }
+                          })
+                      }
+                      ,6000)
+
+              getswitch3 = setInterval(function() {
+                          $.ajax({
+                              type: 'GET',
+                              url: '/switchcontrol3/',
+                              dataType: 'json',
+                              success: function (json) {
+                                  var switchcontrol3 = eval(json);
+                                  if (json.results[0]) {
+                                      var switch3 = json.results[0].switch3;
+                                      if (switch3 === 1) {
+                                          $('#switch3').prop("checked",true)
+                                          $('#arrow1').removeClass('notappear');
+                                          $('#arrow4').removeClass('notappear');
+                                          $('#arrow1').addClass('c');
+                                          $('#arrow4').addClass('f');
+                                      }
+                                      else {
+                                          $('#switch3').prop("checked",false)
+                                          $('#arrow1').addClass('notappear');
+                                          $('#arrow4').addClass('notappear');
+                                          $('#arrow1').removeClass('c');
+                                          $('#arrow4').removeClass('f');
+                                      }
+                                  }
+                              }
+                          })
+                      }
+                      ,6000)
+
+
+              getswitch4 = setInterval(function() {
+                          $.ajax({
+                              type: 'GET',
+                              url: '/switchcontrol4/',
+                              dataType: 'json',
+                              success: function (json) {
+                                  var switchcontrol4 = eval(json);
+                                  if (json.results[0]) {
+                                      var switch4 = json.results[0].switch4;
+                                      if (switch4 === 1) {
+                                          $('#switch4').prop("checked",true)
+                                          $('.fan').addClass('b');
+                                      }
+                                      else {
+                                          $('#switch4').prop("checked",false)
+                                          $('.fan').removeClass('b');
+                                      }
+                                  }
+                              }
+                          })
+                      }
+                      ,6000)
+
+{##}
+{#                        getswitch = setInterval(function(){#}
+{#                         $.ajax({#}
+{#                             type:'GET',#}
+{#                             url:'/autoSwitch/',#}
+{#                             dataType:'json',#}
+{#                             success:function(json){#}
+{#                                 var autoSwitch = eval(json);#}
+{#                                 if(autoSwitch.results[0]) {#}
+{#                                     var s1 = autoSwitch.results[0].light;#}
+{#                                     var s2 = autoSwitch.results[0].water;#}
+{#                                     var s3 = autoSwitch.results[0].elec;#}
+{#                                     var s4 = autoSwitch.results[0].fan;#}
+{#                                     if(s1===1){#}
+{#                                         $('#switch1').attr("checked",true)#}
+{#                                         $('#lighttopleftdiv').removeClass('notappear')#}
+{#                                         $('#lightbottomleftdiv').removeClass('notappear')#}
+{#                                     }#}
+{#                                     else{#}
+{#                                         $('#switch1').attr("checked",false)#}
+{#                                         $('#lighttopleftdiv').addClass('notappear')#}
+{#                                         $('#lightbottomleftdiv').addClass('notappear')#}
+{#                                     }#}
+{#                                     if(s2===1){#}
+{#                                         $('#switch2').attr("checked",true)#}
+{#                                         $('#arrow2').removeClass('notappear');#}
+{#                                         $('#arrow3').removeClass('notappear');#}
+{#                                         $('#arrow2').addClass('d');#}
+{#                                         $('#arrow3').addClass('e');#}
+{#                                     }#}
+{#                                     else{#}
+{#                                         $('#switch2').attr("checked",false)#}
+{#                                         $('#arrow2').addClass('notappear');#}
+{#                                         $('#arrow3').addClass('notappear');#}
+{#                                         $('#arrow2').removeClass('d');#}
+{#                                         $('#arrow3').removeClass('e');#}
+{##}
+{#                                     }#}
+{#                                     if(s3===1){#}
+{#                                         $('#switch3').attr("checked",true)#}
+{#                                         $('#arrow1').removeClass('notappear');#}
+{#                                         $('#arrow4').removeClass('notappear');#}
+{#                                         $('#arrow1').addClass('c');#}
+{#                                         $('#arrow4').addClass('f');#}
+{#                                     }#}
+{#                                     else{#}
+{#                                         $('#switch3').attr("checked",false)#}
+{#                                         $('#arrow1').addClass('notappear');#}
+{#                                         $('#arrow4').addClass('notappear');#}
+{#                                         $('#arrow1').removeClass('c');#}
+{#                                         $('#arrow4').removeClass('f');#}
+{#                                     }#}
+{#                                     if(s4===1){#}
+{#                                         $('#switch4').attr("checked",true)#}
+{#                                         $('.fan').addClass('b');#}
+{#                                     }#}
+{#                                     else{#}
+{#                                         $('#switch4').attr("checked",false)#}
+{#                                         $('.fan').removeClass('b');#}
+{#                                     }#}
+{#                                 }#}
+{#                                 else#}
+{#                                 {#}
+{#                                     console.log('autoSwitch failed!')#}
+{#                                 }#}
+{#                             }#}
+{#                         })#}
+{#                     }#}
+{##}
+{#                     ,7000)#}
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
 
 
 
+<<<<<<< HEAD
+=======
      });
 
 
@@ -1874,6 +2359,7 @@
 
 
 
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 {#      //设置 checkbox ????#}
 {#        function switch1change(){#}
 {#            if(document.getElementById('switch1').checked===true){#}

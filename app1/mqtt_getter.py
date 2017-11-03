@@ -23,7 +23,7 @@ import datetime
 
 # from snippets.models import TestData
 
-MQTT_SERVER = "192.168.1.2"
+MQTT_SERVER = "127.0.0.1"
 MQTT_PORT = 1883
 MQTT_KEEPALIVE = 60
 MQTT_TOPIC_PREFIX = "/Kimstars"

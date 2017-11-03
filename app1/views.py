@@ -3,13 +3,20 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 from .models import lightStatus
 from .serializers import lightstatusSerlizer,factoryData,switchControl1Serilzer,switchControl3Serilzer,switchControl2Serilzer,switchControl4Serilzer
 from .serializers import rotorColorCountSerlizer,elecColorCountSerlizer,elecTimeCountSerilzer,rotorTimeCountSerilzer,factoryDataSerlizer
-from .models import lightStatus,rotorColorCount,elecColorCount,elecTimeCount,rotorTimeCount,configtemp,configsun,configwater
+from .models import lightStatus,rotorColorCount,elecColorCount,elecTimeCount,rotorTimeCount,configtemp,configsun,configwater,runningtime
 # from .models import temperatureFac,humidityFac,co2Fac,PMFac,waterpressureFac,sunFac,factoryData
 # from .serializers import temperatureFacSerilzer,humidityFacSerilzer,co2FacSerilzer,waterpressureFacSerilzer,sunFacSerilzer,PMFacSerilzer
 from django.http import HttpResponse
+<<<<<<< HEAD
 from .models import pipe,fireProSys,airMach,autoSwitch,waterTower,boiler
 from .serializers import pipesSerlizer,fireProSysSerlizer,airMachSerlizer,autoSwitchSerlizer,waterTowerSerlizer,boilerSerlizer,configSunSerilzer,configWaterSerilzer,configTempSerilzer
 import json
+=======
+from .models import pipe,fireProSys,airMach,autoSwitch,waterTower,boiler,id6_get
+from .serializers import pipesSerlizer,fireProSysSerlizer,airMachSerlizer,autoSwitchSerlizer,waterTowerSerlizer,boilerSerlizer,configSunSerilzer,configWaterSerilzer,configTempSerilzer,id6_getSerilzer
+import json
+from .serializers import runningtimeSerilzer
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 from datetime import datetime
 from app1 import models
 import datetime
@@ -17,10 +24,13 @@ from django.db.models import Q
 import re
 from django.shortcuts import redirect
 import pytz
+<<<<<<< HEAD
 import queue
+=======
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 from django.http import HttpResponseRedirect
 # Create your views here.
-
+import queue
 
 
 
@@ -30,6 +40,10 @@ def testview(request):
 
 def chartview(request):
     return render(request,'chart.html')
+
+class runningtimeViewset(ReadOnlyModelViewSet):
+    queryset = runningtime.objects.order_by('-now')
+    serializer_class = runningtimeSerilzer
 
 class fireProSysViewset(ReadOnlyModelViewSet):
     queryset = fireProSys.objects.order_by('-now')
@@ -136,7 +150,13 @@ class configSunViewset(ReadOnlyModelViewSet):
     queryset = configsun.objects.order_by('-now')
     serializer_class = configSunSerilzer
 
+<<<<<<< HEAD
 
+=======
+class id6_getViewset(ReadOnlyModelViewSet):
+    queryset = id6_get.objects.order_by('-now')
+    serializer_class = id6_getSerilzer
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 
 
 def detail(request):
@@ -205,8 +225,11 @@ def detail(request):
             myqueue.queue.clear()
             myqueue.put(a)
         return render(request,'detailpage.html',context={'a':a})
+<<<<<<< HEAD
         # else:
         #     return render(request,'detailpage.html',context={'a':a})
+=======
+>>>>>>> 3d7178659a3e057061599664f7b0168540cb2ada
 # def modelsave(modelname):
 #     models.modelname.objects.create(temperature='1111')
 #     return

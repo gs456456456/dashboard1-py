@@ -1,0 +1,11 @@
+[Unit]
+Description=Django Web
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/kimstars/git/zigbee-dashboard
+ExecStart=/usr/bin/python3 /home/kimstars/git/zigbee-dashboard/manage.py runserver 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
