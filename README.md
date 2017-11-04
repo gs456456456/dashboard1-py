@@ -24,3 +24,5 @@ yellow:待机
 blue:检修
 red:故障
 green:运行
+
+工厂看板 请在1080P下浏览
